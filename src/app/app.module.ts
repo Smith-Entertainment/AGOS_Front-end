@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EnvioListComponent } from './components/envio/envio-list/envio-list.component';
 import { EnvioDetailsComponent } from './components/envio/envio-details/envio-details.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EnvioListComponent,
-    EnvioDetailsComponent
+    EnvioDetailsComponent,
+    HeaderComponent
   ],
   imports: [
     FormsModule,
