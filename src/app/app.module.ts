@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EnvioListComponent } from './components/envio/envio-list/envio-list.component';
+import { EnvioDetailsComponent } from './components/envio/envio-details/envio-details.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EnvioListComponent,
+    EnvioDetailsComponent
   ],
   imports: [
     FormsModule,
