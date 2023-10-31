@@ -1,1 +1,36 @@
-<p>header works!</p>
+<header class="row">
+    <div class="container" id="nav-container">
+        <div class="col-3">
+            <a href=""><img src="./assets/img/logo.png" alt="Logo Observatório" class="navbar-brand" id="logo"></a>
+        </div>
+        <div class="col-6">
+            <nav class="navbar navbar-expand-lg"> <!--fixed-top?-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
+                    aria-controls="navbar-links" aria-extend="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span></button> <!--botao menu mobile-->
+                <div class="collapse navbar-collapse justify-content-center" id="navbar-links">
+                    <div class="navbar-nav">
+                        <a href="" class="nav-item nav-link" id="obras-menu">Obras</a><!--TROCAR POR ROUTERLINK-->
+                        <a href="" class="nav-item nav-link" id="usuario-menu">Usuários</a><!--TROCAR POR ROUTERLINK-->
+                        <a href="" class="nav-item nav-link" id="relatorio-menu">Relatorios</a><!--TROCAR POR ROUTERLINK-->
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="col-3" id="div-login">
+            <div class="text-end">
+                <div>
+                    <strong>
+                        <a href="">Usuário</a><!--TROCAR POR ROUTERLINK-->
+                    </strong>
+                </div>
+                <div>
+                    <a href="">Sair</a>
+                </div>
+            </div>
+            <div>
+                <img src="./assets/img/iconeperfillogin.png" alt="icone-perfil-usuario" width="50">
+            </div>
+        </div>
+    </div>
+</header>
