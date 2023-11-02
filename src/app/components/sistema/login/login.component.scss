@@ -2,22 +2,54 @@
 h1{
 
     text-align: center;
+    font-size: 50px;
+}
+
+#container-login{
+
+    width: 500px;
+    height: 300px;
+    margin: 10% auto ;
 }
 
 #inputEmail{
 
     background-color: #E2DDDC;
+    width: 80%;
 }
 
 #inputPassword{
 
     background-color: #E2DDDC;
+    width: 80%;
+}
+
+#email-container{
+
+    display: flex;
+
+    align-items: flex-end;
+}
+
+#senha-container{
+
+    display: flex;
+
+    align-items: flex-end;
+}
+
+
+
+img{
+
+    width: 60px;
+    height: 60px;
 }
 
 
 #loginButton{
 
-   
+    width:  30%;
     margin: 5px;
     background-color: #A5CF3A;
     border: none;
@@ -27,7 +59,7 @@ h1{
 
 #voltarButton{
 
-    
+    width:  30%;
     margin: 5px; /* Agrega margen entre los botones si es necesario */
     background-color: #ffffff;
     border: 1px solid #E2DDDC ;
@@ -37,6 +69,7 @@ h1{
 
 #cadastrarButton{
 
+    width:  30%;    
     background-color: #ffffff;
     border: 1px solid #A5CF3A ;
     border-radius: 0;
@@ -44,12 +77,7 @@ h1{
 }
 
 
-#container-login{
 
-    width: 500px;
-    height: 300px;
-    margin: 10% auto ;
-}
 
 
 #login-voltar-btn{
