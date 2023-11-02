@@ -16,7 +16,9 @@ h1{
 
 
 #loginButton{
-    
+
+   
+    margin: 5px;
     background-color: #A5CF3A;
     border: none;
     border-radius: 0;
@@ -25,6 +27,8 @@ h1{
 
 #voltarButton{
 
+    
+    margin: 5px; /* Agrega margen entre los botones si es necesario */
     background-color: #ffffff;
     border: 1px solid #E2DDDC ;
     border-radius: 0;
@@ -44,13 +48,21 @@ h1{
 
     width: 500px;
     height: 300px;
-    border: 1px solid #202020;
     margin: 10% auto ;
 }
 
 
-#testbtn{
+#login-voltar-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
 
-    padding: 0 25%;
-    border: 1px solid red;
+
+#login-cadastrar-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
