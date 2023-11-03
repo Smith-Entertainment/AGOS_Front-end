@@ -1,0 +1,6 @@
+export enum Situacao {
+    EDUCACAO = 'EDUCACAO',
+    INFRAESTRUTURA = 'INFRAESTRUTURA',
+    ESPORTE_E_LAZER = 'ESPORTE_E_LAZER',
+    SAUDE = 'SAUDE',
+}
