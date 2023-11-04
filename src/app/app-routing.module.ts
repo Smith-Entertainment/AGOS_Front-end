@@ -4,7 +4,7 @@ import { IndexComponent } from './components/layout/index/index.component';
 import { ObraPerfilComponent } from './components/Obra/obra-perfil/obra-perfil.component';
 
 const routes: Routes = [
-  {path:"", component:IndexComponent},
+  {path:"", component:ObraPerfilComponent},
   {path: "AGOS", component:IndexComponent, children:[
     {path:"obra", component: ObraPerfilComponent}
 ]

@@ -57,3 +57,26 @@
     display: flex;
     align-items: flex-end;
   }
+  .titulo{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+
+  }
+  .lista {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 5vh 0vh 5vh 0vw;
+  }
+  
+  .part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .lista a:hover {
+    color: green;
+  }

@@ -6,7 +6,11 @@
         </div>
         <section class="desc">
           <div>
+            <div class="titulo">
             <h2>{{ obra.titulo }}</h2>
+            <span class="badge text-bg-secondary">{{obra.situacao}}</span>
+            <span class="badge text-bg-secondary">{{obra.tipoObra}}</span>
+          </div>
             <br />
             <div class="flex">
               <section>
@@ -15,8 +19,16 @@
                   <h5>{{ obra.objetivo }}</h5>
                 </div>
                 <div class="banker">
-                  <label><h4>Endereço: </h4></label>
-                  <h5>{{ obra.rua }}</h5>
+                  <label><h4>Bairro: </h4></label>
+                  <h5>{{ obra.bairro.nome }}</h5> 
+                </div>
+                <div class="banker">
+                  <label><h4>Rua: </h4></label>
+                  <h5>{{ obra.rua }}  {{obra.numeroEndereco}}</h5> 
+                </div>
+                <div class="banker">
+                  <label><h4>Cep: </h4></label>
+                  <h5>{{ obra.cep }}</h5> 
                 </div>
                 <div class="banker">
                   <label><h4>Data do certame: </h4></label>
@@ -26,12 +38,14 @@
                   <label><h4>Licitação: </h4></label>
                   <h5>{{ obra.licitacao }}</h5>
                 </div>
-                <div class="banker">
-                    <label><h4>Empresa Contratada: </h4></label>
-                </div>
+
               </section>
   
               <section>
+                <div class="banker">
+                  <label><h4>Empresa Contratada: </h4></label>
+                  <h5>{{ obra.empresaContratada.nome }}</h5>
+              </div>
                 <div class="banker">
                   <label><h4>Data de Inicio: </h4></label>
                   <h5>{{ obra.dataInicio }}</h5>
@@ -62,5 +76,17 @@
         </section>
       </div>
     </section>
+    <nav>
+      <div class="lista">
+        <a routerLink="/cronograma">Cronograma</a>
+        <a routerLink="/graficos">Gráficos</a>
+        <a routerLink="/fotos">Fotos</a>
+        <a routerLink="/projetos">Projetos</a>
+        <a routerLink="/relatorios">Relatórios</a>
+        <a routerLink="/documentos">Documentos</a>
+      </div>
+  </nav>
+    <hr>
+    
   </div>
   
