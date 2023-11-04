@@ -8,13 +8,17 @@ import { Bairro } from 'src/app/models/bairro-model/bairro';
 })
 export class BairroService {
 
-  private baseUrl = '/api/bairro';
+  private baseUrl = 'http://localhost:8080/api/bairro';
 
   constructor(private http: HttpClient) {}
 
   findById(id: number): Observable<Bairro> {
     return this.http.get<Bairro>(`${this.baseUrl}?id=${id}`);
   }
+  findByNome(nome: string): Observable<Bairro> {
+    return this.http.get<Bairro>(`${this.baseUrl}/byNome?nome=${nome}`);
+  }
+  
   findAll(): Observable<Bairro[]> {
     return this.http.get<Bairro[]>(`${this.baseUrl}/lista`);
   }

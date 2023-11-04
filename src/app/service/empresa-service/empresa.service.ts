@@ -7,7 +7,7 @@ import { Empresa } from 'src/app/models/empresa-model/empresa';
 })
 export class EmpresaService {
 
-  private baseUrl = '/api/empresa';
+  private baseUrl = 'http://localhost:8080/api/empresa';
 
   constructor(private http: HttpClient) {}
 

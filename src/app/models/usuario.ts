@@ -1,4 +1,4 @@
-import { Obra } from "./obra";
+import { Obra } from "./obra-model/obra";
 
 export class Usuario {
     id !: number;

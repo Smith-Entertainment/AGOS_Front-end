@@ -7,7 +7,7 @@ import { Obra } from 'src/app/models/obra-model/obra';
   providedIn: 'root'
 })
 export class ObraService {
-  private baseUrl = '/api/obra';
+  private baseUrl = 'http://localhost:8080/api/obra';
 
   constructor(private http: HttpClient) {}
 
