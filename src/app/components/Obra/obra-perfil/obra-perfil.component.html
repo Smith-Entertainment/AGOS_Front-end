@@ -1,0 +1,66 @@
+<div *ngIf="obra">
+    <section>
+      <div class="conteudo" id="conteudo">
+        <div class="img">
+            <img class="obra" src="./assets/img/obra-exemplo.jpg" alt="Foto Obra" />
+        </div>
+        <section class="desc">
+          <div>
+            <h2>{{ obra.titulo }}</h2>
+            <br />
+            <div class="flex">
+              <section>
+                <div class="banker">
+                  <label><h4>Objetivo: </h4></label>
+                  <h5>{{ obra.objetivo }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>Endereço: </h4></label>
+                  <h5>{{ obra.rua }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>Data do certame: </h4></label>
+                  <h5>{{ obra.dataCertame }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>Licitação: </h4></label>
+                  <h5>{{ obra.licitacao }}</h5>
+                </div>
+                <div class="banker">
+                    <label><h4>Empresa Contratada: </h4></label>
+                </div>
+              </section>
+  
+              <section>
+                <div class="banker">
+                  <label><h4>Data de Inicio: </h4></label>
+                  <h5>{{ obra.dataInicio }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>Data de Término (previsto): </h4></label>
+                  <h5>{{ obra.dataTermino }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>Valor do edital: </h4></label>
+                  <h5>R$ {{ obra.valorEdital }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>Valor contratado: </h4></label>
+                  <h5>{{ obra.valorContratado }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>N° do contrato: </h4></label>
+                  <h5>{{ obra.numeroContrato }}</h5>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="part">
+            <img class="config" src="./assets/img/config.png" alt="Editar" />
+            <button id="btp">Participar</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+  

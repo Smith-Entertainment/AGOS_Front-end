@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable,} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Obra } from '../models/obra';
 
@@ -7,27 +7,26 @@ import { Obra } from '../models/obra';
   providedIn: 'root'
 })
 export class ObraService {
-  private baseUrl = '/api/obra';
+  private baseUrl = 'http://localhost:8080/api/obra'; 
 
   constructor(private http: HttpClient) {}
 
   findById(id: number): Observable<Obra> {
-    return this.http.get<Obra>(`${this.baseUrl}?id=${id}`);
-  }
+    return this.http.get<Obra>(`${this.baseUrl}?id=${id}`);  }
 
   findAll(): Observable<Obra[]> {
-    return this.http.get<Obra[]>(`${this.baseUrl}/lista`);
+    return this.http.get<Obra[]>(this.baseUrl);
   }
 
-  save(obra: Obra): Observable<string> {
-    return this.http.post<string>(this.baseUrl, obra);
+  save(obra: Obra): Observable<Obra> {
+    return this.http.post<Obra>(this.baseUrl, obra);
   }
 
-  update(id: number, obra: Obra): Observable<string> {
-    return this.http.put<string>(`${this.baseUrl}?id=${id}`, obra);
+  update(id: number, obra: Obra): Observable<Obra> {
+    return this.http.put<Obra>(`${this.baseUrl}/${id}`, obra);
   }
 
-  delete(id: number): Observable<string> {
-    return this.http.delete<string>(`${this.baseUrl}?id=${id}`);
+  delete(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 }

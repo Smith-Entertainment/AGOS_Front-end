@@ -8,12 +8,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EnvioListComponent } from './components/envio/envio-list/envio-list.component';
 import { EnvioDetailsComponent } from './components/envio/envio-details/envio-details.component';
+import { ObraPerfilComponent } from './components/Obra/obra-perfil/obra-perfil.component';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { IndexComponent } from './components/layout/index/index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EnvioListComponent,
-    EnvioDetailsComponent
+    EnvioDetailsComponent,
+    ObraPerfilComponent,
+    HeaderComponent,
+    IndexComponent
   ],
   imports: [
     FormsModule,

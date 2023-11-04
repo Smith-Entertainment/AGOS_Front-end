@@ -1,6 +1,7 @@
 export class Obra {
  id !: number;
 titulo !: string;
+objetivo !: string;
 cep !: string;
 licitacao !: string;
 dataCertame !: Date;
