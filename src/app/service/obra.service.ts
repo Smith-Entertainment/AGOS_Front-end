@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Obra } from '../models/obra';
 
@@ -9,7 +9,8 @@ import { Obra } from '../models/obra';
 export class ObraService {
   private baseUrl = 'http://localhost:8080/api/obra'; 
 
-  constructor(private http: HttpClient) {}
+  
+  http = inject(HttpClient);
 
   findById(id: number): Observable<Obra> {
     return this.http.get<Obra>(`${this.baseUrl}?id=${id}`);  }
