@@ -9,6 +9,7 @@ import { EnvioDetailsComponent } from './components/envio/envio-details/envio-de
 import { ObraDetailsComponent } from './components/obra/obra-details/obra-details.component';
 import { ObraListComponent } from './components/obra/obra-list/obra-list.component';
 import { LoginComponent } from './components/sistema/login/login.component';
+import { RecuperaSenhaComponent } from './components/sistema/recupera-senha/recupera-senha.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { LoginComponent } from './components/sistema/login/login.component';
     EnvioDetailsComponent,
     ObraDetailsComponent,
     ObraListComponent,
-    LoginComponent
+    LoginComponent,
+    RecuperaSenhaComponent
   ],
   imports: [
     BrowserModule,
