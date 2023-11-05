@@ -10,18 +10,25 @@ h1{
     width: 500px;
     height: 300px;
     margin: 10% auto ;
+  
 }
 
-#inputEmail{
 
-    background-color: #E2DDDC;
+.form-floating{
+
     width: 80%;
 }
 
-#inputPassword{
+#floatingInput{
 
     background-color: #E2DDDC;
-    width: 80%;
+    width: 100%;
+}
+
+#floatingPassword{
+
+    background-color: #E2DDDC;
+    width: 100%;
 }
 
 #email-container{
@@ -45,6 +52,8 @@ img{
     width: 60px;
     height: 60px;
 }
+
+
 
 
 #loginButton{
@@ -92,5 +101,13 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+
+}
+
+
+
+
+
+#testetext{
 
 }

@@ -10,6 +10,7 @@ import { ObraDetailsComponent } from './components/obra/obra-details/obra-detail
 import { ObraListComponent } from './components/obra/obra-list/obra-list.component';
 import { LoginComponent } from './components/sistema/login/login.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
