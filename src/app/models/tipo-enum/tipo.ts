@@ -1,6 +1,5 @@
 export enum Tipo {
     EDUCACAO = 'EDUCACAO',
     INFRAESTRUTURA = 'INFRAESTRUTURA',
-    ESPORTE_E_LAZER = 'ESPORTE_E_LAZER',
     SAUDE = 'SAUDE',
 }

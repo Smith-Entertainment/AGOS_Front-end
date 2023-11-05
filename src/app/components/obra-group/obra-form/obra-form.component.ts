@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Bairro } from 'src/app/models/bairro-model/bairro';
 import { Obra } from 'src/app/models/obra-model/obra';
+import { Situacao } from 'src/app/models/situacao-enum/situacao';
 import { Tipo } from 'src/app/models/tipo-enum/tipo';
 import { BairroService } from 'src/app/service/bairro-service/bairro.service';
 import { ObraService } from 'src/app/service/obra-service/obra.service';
@@ -13,16 +14,19 @@ import { ObraService } from 'src/app/service/obra-service/obra.service';
 })
 export class ObraFormComponent {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private service: ObraService,
+    private bairroService: BairroService
+  ) {}
 
   @Input() obra: Obra = new Obra();
   @Input() bairro: Bairro = new Bairro
   @Output() return = new EventEmitter<Obra>();
 
-  service = inject(ObraService);
-  bairroService = inject(BairroService);
 
   tipos = Tipo;
+  situacoes = Situacao;
 
   maskCEP(event: any) {
     const inputValue = event.target.value;
@@ -41,34 +45,70 @@ export class ObraFormComponent {
       this.obra.rua = data.logradouro;
     });
   }
-
   save() {
-    if (this.obra.id) {
-      this.service.update(this.obra.id, this.obra).subscribe(response => {
-        console.log('Obra atualizada com sucesso', response);
-      });
+    if (this.obra.id != null) {
+      this.update();
     } else {
-      this.bairroService.findByNome(this.bairro.nome).subscribe(existingBairro => {
-        if (existingBairro != null) {  
-          this.obra.bairro = existingBairro;
-          this.createObra();
-        } else {
-          this.bairroService.create(this.bairro).subscribe(response => {
-            this.bairroService.findByNome(this.bairro.nome).subscribe(find => {
-              this.obra.bairro = find;
-              this.createObra();
-            });
-          });
-
-        }
-      });
+      this.create();
     }
   }
 
-  createObra() {
-    this.service.create(this.obra).subscribe(response => {
-      console.log('Obra criada com sucesso', response);
-    });
+
+  create() {
+    this.bairroService.findByNome(this.bairro.nome).subscribe(
+      response => {
+        this.obra.bairro = response;
+        console.log(this.obra);
+        this.post();
+      }, Error => {
+        this.bairroService.create(this.bairro).subscribe(
+          response => {
+            this.obra.bairro = response;
+            console.log(this.obra);
+            this.post();
+          }
+        )
+      }
+    )
   }
+  update() {
+    this.bairroService.findByNome(this.bairro.nome).subscribe(
+      response => {
+        this.obra.bairro = response;
+        console.log(this.obra);
+        this.put();
+      }, Error => {
+        this.bairroService.create(this.bairro).subscribe(
+          response => {
+            this.obra.bairro = response;
+            console.log(this.obra);
+            this.put();
+          }
+        )
+      }
+    )
+  }
+
+
+  post() {
+    this.service.create(this.obra).subscribe(
+      response => {
+        console.log('Obra criada com sucesso', response);
+      }, error => {
+        console.log(this.obra);
+      }
+    );
+  }
+
+  put() {
+    this.service.update(this.obra.id, this.obra).subscribe(
+      response => {
+        console.log('Obra atualizada com sucesso', response);
+      },error => {
+        console.error('Falha ao atualizar a obra.', error);
+      }
+    );
+  }
+  
 
 }

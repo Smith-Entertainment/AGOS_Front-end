@@ -16,14 +16,14 @@ export class BairroService {
     return this.http.get<Bairro>(`${this.baseUrl}?id=${id}`);
   }
   findByNome(nome: string): Observable<Bairro> {
-    return this.http.get<Bairro>(`${this.baseUrl}/byNome?nome=${nome}`);
+    return this.http.get<Bairro>(`${this.baseUrl}/findBy?nome=${nome}`);
   }
   
   findAll(): Observable<Bairro[]> {
     return this.http.get<Bairro[]>(`${this.baseUrl}/lista`);
   }
-  create(obra: Bairro): Observable<string> {
-    return this.http.post<string>(this.baseUrl, obra);
+  create(obra: Bairro): Observable<Bairro> {
+    return this.http.post<Bairro>(this.baseUrl, obra);
   }
   update(id: number, obra: Bairro): Observable<string> {
     return this.http.put<string>(`${this.baseUrl}?id=${id}`, obra);

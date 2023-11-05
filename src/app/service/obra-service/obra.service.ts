@@ -18,7 +18,7 @@ export class ObraService {
     return this.http.get<Obra[]>(`${this.baseUrl}/lista`);
   }
   create(obra: Obra): Observable<string> {
-    return this.http.post<string>(this.baseUrl, obra);
+    return this.http.post<string>(this.baseUrl, obra);  
   }
   update(id: number, obra: Obra): Observable<string> {
     return this.http.put<string>(`${this.baseUrl}?id=${id}`, obra);

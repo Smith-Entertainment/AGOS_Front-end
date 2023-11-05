@@ -9,6 +9,7 @@ import { Tipo } from "../tipo-enum/tipo";
 export class Obra {
     id!: number;
     titulo!: string;
+    objetivo!:string;
     cep!: string;
     licitacao!: string;
     dataCertame!: Data;
@@ -21,10 +22,12 @@ export class Obra {
     dataTermino!: Data;
     numeroContrato!: string;
     empresaContratada!: Empresa;
-    situacao!: Situacao;
-    tipo!: Tipo;
+    //situacao!: Situacao;
+    situacao!: string;
+    //tipoObra!: Tipo;
+    tipoObra!: string;
+
     foto!: Envio;
     usuarios!: Usuario[];   
 
-   
 }
