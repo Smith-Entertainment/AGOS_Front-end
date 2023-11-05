@@ -1,0 +1,29 @@
+<section>
+    <button type="button" class="btn btn-danger col-3">Adicionar</button>
+</section>
+
+<section>
+    <div class="card mb-3" *ngFor="let obra of obras" [routerLink]="['/obra/profile', obra.id]">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{ obra.titulo }} 
+                        <span class="badge bg-success">{{ obra.tipoObra }}</span> 
+                        <span class="badge bg-warning">{{ obra.situacao }}</span>
+                    </h5>
+                    <p class="card-text">{{ obra.rua }}, {{ obra.numeroEndereco }} - {{ obra.bairro }}, Foz do Iguaçu - PR, {{ obra.cep }}</p>
+                    <div class="row">
+                        <p class="card-text">{{ obra.licitacao }}</p><p class="card-text">{{ obra.numeroContrato }}</p>
+                        <p class="card-text">{{ obra.valorEdital }}</p><p class="card-text">{{ obra.valorContratado }}</p>
+                        <p class="card-text">{{ obra.dataInicio }}</p>
+                        <p class="card-text">{{ obra.dataCertame }}</p><p class="card-text">{{ obra.empresaContratada }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
