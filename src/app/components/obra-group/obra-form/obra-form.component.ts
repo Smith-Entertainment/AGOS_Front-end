@@ -3,8 +3,6 @@ import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Bairro } from 'src/app/models/bairro-model/bairro';
 import { Empresa } from 'src/app/models/empresa-model/empresa';
 import { Obra } from 'src/app/models/obra-model/obra';
-import { Situacao } from 'src/app/models/situacao-enum/situacao';
-import { Tipo } from 'src/app/models/tipo-enum/tipo';
 import { BairroService } from 'src/app/service/bairro-service/bairro.service';
 import { EmpresaService } from 'src/app/service/empresa-service/empresa.service';
 import { ObraService } from 'src/app/service/obra-service/obra.service';
@@ -20,10 +18,10 @@ export class ObraFormComponent {
     private http: HttpClient,
     private service: ObraService,
     private bairroService: BairroService,
-    private empresaService: EmpresaService
+    private empresaService: EmpresaService,
   ) { }
 
-  @Output() return = new EventEmitter<Obra>();
+  @Output() retorno = new EventEmitter<Obra>();
   @Input() obra: Obra = new Obra();
   bairro: Bairro = new Bairro();
   empresa: Empresa = new Empresa();
@@ -34,7 +32,6 @@ export class ObraFormComponent {
   sucesso: boolean = false;
   erro: boolean = false;
   mensagem !: string;
-
 
 
   maskCEP(event: any) {
@@ -77,7 +74,7 @@ export class ObraFormComponent {
               this.put();
             }
           }, error => {
-            this.mensagem = "\Error: " + error.error + "  Status: " + error.status;
+            this.mensagem = "Status: " + error.status;
             this.erro = true;
             setTimeout(() => {
               this.erro = false;
@@ -92,13 +89,13 @@ export class ObraFormComponent {
     this.service.create(this.obra).subscribe(
       response => {
         this.sucesso = true;
-        this.mensagem = "Sucesso... \Status: 200";
+        this.mensagem = "Sucesso..." ;
         setTimeout(() => {
           this.sucesso = false;
         }, 1000);
       }, error => {
         console.log(this.obra);
-        this.mensagem = "\Error: " + error.error + "  Status: " + error.status;
+        this.mensagem = "Status: " + error.status;
         this.erro = true;
         setTimeout(() => {
           this.erro = false;
@@ -112,13 +109,13 @@ export class ObraFormComponent {
     this.service.update(this.obra.id, this.obra).subscribe(
       response => {
         this.sucesso = true;
-        this.mensagem = "Sucesso... \Status: 200";
+        this.mensagem = "Sucesso..." ;
         setTimeout(() => {
           this.sucesso = false;
         }, 1000);
       }, error => {
         console.log(this.obra);
-        this.mensagem = "\Error: " + error.error + "  Status: " + error.status;
+        this.mensagem = "Status: " + error.status;
         this.erro = true;
         setTimeout(() => {
           this.erro = false;

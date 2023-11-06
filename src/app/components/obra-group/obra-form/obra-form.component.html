@@ -1,5 +1,6 @@
 <main class="w-100">
     <br>
+    <br>
     <div class="d-flex justify-content-center">
         <form class="w bord" (ngSubmit)="save()">
             <div class="d-flex justify-content-center ">
@@ -7,10 +8,8 @@
                 <h3 *ngIf="obra.id != null">Edição de Obra</h3>
             </div> 
             <br>
-            <div *ngIf="sucesso" class="alert alert-success" role="alert">
-                {{ mensagem }}
-            </div>
-            <div *ngIf="erro" class="alert alert-danger" role="alert">
+
+            <div *ngIf="erro" class="alert alert-primary" role="alert">
                 {{ mensagem }}
             </div>
     

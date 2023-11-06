@@ -15,7 +15,7 @@ import { ObraFormComponent } from './components/obra-group/obra-form/obra-form.c
     AppComponent,
     EnvioListComponent,
     EnvioDetailsComponent,
-    ObraFormComponent
+    ObraFormComponent,
   ],
   imports: [
     FormsModule,
