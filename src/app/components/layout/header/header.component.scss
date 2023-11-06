@@ -56,3 +56,18 @@ header {
 #div-login a:hover {
     color: #A5CF3A;
 }
+#btn-signin{
+    height: 1.5rem;
+    width: 100px;
+    color: #202020;
+    height: auto;
+    border-radius: 5px;
+}
+#btn-signin:hover{
+    background-color: #A5CF3A;
+    border-color: #A5CF3A;
+}
+.navbar-toggler, .navbar-toggler-icon{
+    background-color: #A5CF3A;
+    border-color: #A5CF3A;
+}
