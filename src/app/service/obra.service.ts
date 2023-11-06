@@ -7,7 +7,7 @@ import { Obra } from '../models/obra';
   providedIn: 'root'
 })
 export class ObraService {
-  private baseUrl = 'http://localhost:8080/api/obra'; 
+  private baseUrl = 'http://localhost:8080/api/obra';
 
   
   http = inject(HttpClient);
@@ -16,7 +16,7 @@ export class ObraService {
     return this.http.get<Obra>(`${this.baseUrl}?id=${id}`);  }
 
   findAll(): Observable<Obra[]> {
-    return this.http.get<Obra[]>(this.baseUrl);
+    return this.http.get<Obra[]>(this.baseUrl+"/lista");
   }
 
   save(obra: Obra): Observable<Obra> {
