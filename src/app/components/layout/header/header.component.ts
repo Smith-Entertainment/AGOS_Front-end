@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit{
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit() {
-    const userId = 1; // Substitua pelo ID do usuário desejado
+    const userId = 1;
     this.getUsuarioBackend(userId);
   }
 
