@@ -17,7 +17,7 @@ export class ObraPerfilComponent {
   ) {
     this.route.params.subscribe(params => {
       const obraId = params['id']; 
-      this.obraService.findById(1).subscribe((data) => {
+      this.obraService.findById(obraId).subscribe((data) => {
         console.log(data);
         this.obra = data;
       });

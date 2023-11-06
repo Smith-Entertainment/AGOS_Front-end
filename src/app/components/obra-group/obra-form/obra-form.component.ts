@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Bairro } from 'src/app/models/bairro-model/bairro';
 import { Empresa } from 'src/app/models/empresa-model/empresa';
 import { Obra } from 'src/app/models/obra-model/obra';
@@ -19,6 +20,7 @@ export class ObraFormComponent {
     private service: ObraService,
     private bairroService: BairroService,
     private empresaService: EmpresaService,
+    private route: ActivatedRoute
   ) { this.findById(); }
 
   @Output() retorno = new EventEmitter<Obra>();
@@ -137,10 +139,12 @@ export class ObraFormComponent {
   }
 
   findById() {
-    this.service.findById(1).subscribe(
-      response => {
-        this.obra = response;
-      }
-    )
+    this.route.params.subscribe(params => {
+      const obraId = params['id'];
+      this.service.findById(obraId).subscribe(
+        response => {
+          this.obra = response;
+        });
+    });
   }
 }

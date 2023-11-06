@@ -8,7 +8,7 @@ const routes: Routes = [
   {path:"", component:ObraPerfilComponent},
   {path: "AGOS", component:IndexComponent, children:[
     {path:"obra/:id", component: ObraPerfilComponent},
-    {path: 'obra/form', component: ObraFormComponent}
+    {path: 'obra/form/:id', component: ObraFormComponent}
     ]
   }
 ]
