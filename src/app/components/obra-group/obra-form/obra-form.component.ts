@@ -19,7 +19,7 @@ export class ObraFormComponent {
     private service: ObraService,
     private bairroService: BairroService,
     private empresaService: EmpresaService,
-  ) { }
+  ) { this.findById(); }
 
   @Output() retorno = new EventEmitter<Obra>();
   @Input() obra: Obra = new Obra();
@@ -32,7 +32,6 @@ export class ObraFormComponent {
   sucesso: boolean = false;
   erro: boolean = false;
   mensagem !: string;
-
 
   maskCEP(event: any) {
     const inputValue = event.target.value;
@@ -89,7 +88,7 @@ export class ObraFormComponent {
     this.service.create(this.obra).subscribe(
       response => {
         this.sucesso = true;
-        this.mensagem = "Sucesso..." ;
+        this.mensagem = "Sucesso...";
         setTimeout(() => {
           this.sucesso = false;
         }, 1000);
@@ -109,7 +108,7 @@ export class ObraFormComponent {
     this.service.update(this.obra.id, this.obra).subscribe(
       response => {
         this.sucesso = true;
-        this.mensagem = "Sucesso..." ;
+        this.mensagem = "Sucesso...";
         setTimeout(() => {
           this.sucesso = false;
         }, 1000);
@@ -135,6 +134,13 @@ export class ObraFormComponent {
           }
         );
       });
+  }
 
+  findById() {
+    this.service.findById(1).subscribe(
+      response => {
+        this.obra = response;
+      }
+    )
   }
 }
