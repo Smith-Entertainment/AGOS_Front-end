@@ -35,7 +35,7 @@
                 <img src="./assets/img/iconeperfillogin.png" alt="icone-perfil-usuario" width="50">
             </div>
         </div>
-        <div class="col-3" id="div-login">
+        <div class="col-3" id="div-login" *ngIf="isLoged == false">
             <button id="btn-signin" name="signIn" (click)="checkLogin()">Entrar</button><!--TROCAR POR ROUTERLINK-->
         </div>
     </div>
