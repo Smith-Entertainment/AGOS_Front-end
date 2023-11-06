@@ -7,11 +7,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ObraFormComponent } from './components/obra-group/obra-form/obra-form.component';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { IndexComponent } from './components/layout/index/index.component';
+import { ObraPerfilComponent } from './components/Obra/obra-perfil/obra-perfil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ObraFormComponent,
+    ObraPerfilComponent,
+    HeaderComponent,
+    IndexComponent
   ],
   imports: [
     FormsModule,

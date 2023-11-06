@@ -85,7 +85,7 @@ export class ObraFormComponent {
   }
 
   post() {
-    this.service.create(this.obra).subscribe(
+    this.service.save(this.obra).subscribe(
       response => {
         this.sucesso = true;
         this.mensagem = "Sucesso...";
