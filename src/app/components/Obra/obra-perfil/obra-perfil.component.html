@@ -1,0 +1,92 @@
+<div *ngIf="obra">
+    <section>
+      <div class="conteudo" id="conteudo">
+        <div class="img">
+            <img class="obra" src="./assets/img/noimage.jpg" alt="Foto Obra" />
+        </div>
+        <section class="desc">
+          <div>
+            <div class="titulo">
+            <h2>{{ obra.titulo }}</h2>
+            <span class="badge text-bg-secondary">{{obra.situacao}}</span>
+            <span class="badge text-bg-secondary">{{obra.tipoObra}}</span>
+          </div>
+            <br />
+            <div class="flex">
+              <section>
+                <div class="banker">
+                  <label><h4>Objetivo: </h4></label>
+                  <h5>{{ obra.objetivo }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>Bairro: </h4></label>
+                  <h5>{{ obra.bairro.nome }}</h5> 
+                </div>
+                <div class="banker">
+                  <label><h4>Rua: </h4></label>
+                  <h5>{{ obra.rua }}  {{obra.numeroEndereco}}</h5> 
+                </div>
+                <div class="banker">
+                  <label><h4>Cep: </h4></label>
+                  <h5>{{ obra.cep }}</h5> 
+                </div>
+                <div class="banker">
+                  <label><h4>Data do certame: </h4></label>
+                  <h5>{{ obra.dataCertame }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>Licitação: </h4></label>
+                  <h5>{{ obra.licitacao }}</h5>
+                </div>
+
+              </section>
+  
+              <section>
+                <div class="banker">
+                  <label><h4>Empresa Contratada: </h4></label>
+                  <h5>{{ obra.empresaContratada.nome }}</h5>
+              </div>
+                <div class="banker">
+                  <label><h4>Data de Inicio: </h4></label>
+                  <h5>{{ obra.dataInicio }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>Data de Término (previsto): </h4></label>
+                  <h5>{{ obra.dataTermino }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>Valor do edital: </h4></label>
+                  <h5>R$ {{ obra.valorEdital }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>Valor contratado: </h4></label>
+                  <h5>{{ obra.valorContratado }}</h5>
+                </div>
+                <div class="banker">
+                  <label><h4>N° do contrato: </h4></label>
+                  <h5>{{ obra.numeroContrato }}</h5>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="part">
+            <img class="config" src="./assets/img/config.png" alt="Editar" />
+            <button id="btp">Participar</button>
+          </div>
+        </section>
+      </div>
+    </section>
+    <nav>
+      <div class="lista">
+        <a routerLink="/cronograma">Cronograma</a>
+        <a routerLink="/graficos">Gráficos</a>
+        <a routerLink="/fotos">Fotos</a>
+        <a routerLink="/projetos">Projetos</a>
+        <a routerLink="/relatorios">Relatórios</a>
+        <a routerLink="/documentos">Documentos</a>
+      </div>
+  </nav>
+    <hr>
+    
+  </div>
+  
