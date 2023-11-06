@@ -10,27 +10,33 @@
                     <span class="navbar-toggler-icon"></span></button> <!--botao menu mobile-->
                 <div class="collapse navbar-collapse justify-content-center" id="navbar-links">
                     <div class="navbar-nav">
-                        <a href="" class="nav-item nav-link" id="obras-menu">Obras</a><!--TROCAR POR ROUTERLINK-->
-                        <a href="" class="nav-item nav-link" id="usuario-menu">Usuários</a><!--TROCAR POR ROUTERLINK-->
-                        <a href="" class="nav-item nav-link" id="relatorio-menu">Relatorios</a><!--TROCAR POR ROUTERLINK-->
+                        <a routerLink="/obras" routerLinkActive="active-link" class="nav-item nav-link"
+                            id="obras-menu">Obras</a>
+                        <a routerLink="/usuarios" routerLinkActive="active-link" class="nav-item nav-link"
+                            id="usuario-menu">Usuários</a>
+                        <a routerLink="/relatorios" routerLinkActive="active-link" class="nav-item nav-link"
+                            id="relatorio-menu">Relatórios</a>
                     </div>
                 </div>
             </nav>
         </div>
-        <div class="col-3" id="div-login">
+        <div class="col-3" id="div-login" *ngIf="isLoged == true">
             <div class="text-end">
                 <div>
                     <strong>
-                        <a href="">Usuário</a><!--TROCAR POR ROUTERLINK-->
+                        <a routerLink="/usuario-details">Usuário: {{ usuario.nome }}</a>
                     </strong>
                 </div>
                 <div>
-                    <a href="">Sair</a>
+                    <a routerLink="" (click)="checkLogin()">Sair</a>
                 </div>
             </div>
             <div>
                 <img src="./assets/img/iconeperfillogin.png" alt="icone-perfil-usuario" width="50">
             </div>
+        </div>
+        <div class="col-3" id="div-login">
+            <button name="SignIn" (click)="checkLogin()">Sign In</button><!--TROCAR POR ROUTERLINK-->
         </div>
     </div>
 </header>
