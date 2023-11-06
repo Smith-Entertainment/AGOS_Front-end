@@ -6,7 +6,7 @@ import { ObraPerfilComponent } from './components/Obra/obra-perfil/obra-perfil.c
 const routes: Routes = [
   {path:"", component:ObraPerfilComponent},
   {path: "AGOS", component:IndexComponent, children:[
-    {path:"obra", component: ObraPerfilComponent}
+    {path:"obra/:id", component: ObraPerfilComponent}
 ]
   }
 ]

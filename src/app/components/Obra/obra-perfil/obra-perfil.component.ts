@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Obra } from 'src/app/models/obra';
 import { ObraService } from 'src/app/service/obra.service';
 
@@ -8,12 +9,18 @@ import { ObraService } from 'src/app/service/obra.service';
   styleUrls: ['./obra-perfil.component.scss']
 })
 export class ObraPerfilComponent {
-  obra !: Obra;
+  obra!: Obra;
 
-  constructor(private obraService: ObraService) {
-    this.obraService.findById(1).subscribe((data) => {
-      console.log(data); 
-      this.obra = data;
+  constructor(
+    private obraService: ObraService,
+    private route: ActivatedRoute // Injete o ActivatedRoute
+  ) {
+    this.route.params.subscribe(params => {
+      const obraId = params['id']; 
+      this.obraService.findById(obraId).subscribe((data) => {
+        console.log(data);
+        this.obra = data;
+      });
     });
   }
 }
