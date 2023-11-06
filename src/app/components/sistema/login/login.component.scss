@@ -1,0 +1,123 @@
+
+h1{
+
+    text-align: center;
+    font-size: 40px;
+}
+
+h3{
+    
+    text-align: center;
+    color: #A5CF3A;
+}
+
+#container-login{
+
+    width: 500px;
+    height: 300px;
+    margin: 10% auto ;
+  
+}
+
+
+.form-floating{
+
+    width: 80%;
+}
+
+#floatingInput{
+
+    background-color: #E2DDDC;
+    width: 100%;
+}
+
+#floatingPassword{
+
+    background-color: #E2DDDC;
+    width: 100%;
+}
+
+#email-container{
+
+    display: flex;
+
+    align-items: flex-end;
+}
+
+#senha-container{
+
+    display: flex;
+
+    align-items: flex-end;
+}
+
+
+
+img{
+
+    margin: auto;
+    width: 60px;
+    height: 60px;
+}
+
+#testeee{
+
+    margin-left: 45%;
+    text-decoration: underline;
+    color: #000000;
+}
+
+#testeee:hover{
+
+    color: #A5CF3A;
+
+}
+
+#loginButton{
+
+    width:  30%;
+    margin: 5px;
+    background-color: #A5CF3A;
+    border: none;
+    border-radius: 5px;
+    color: #202020;
+}
+
+#voltarButton{
+
+    width:  30%;
+    margin: 5px; /* Agrega margen entre los botones si es necesario */
+    background-color: #ffffff;
+    border: 1px solid #E2DDDC ;
+    border-radius: 5px;
+    color: #202020;
+}
+
+#cadastrarButton{
+
+    width:  30%;    
+    background-color: #ffffff;
+    border: 3px solid #A5CF3A ;
+    border-radius: 5px;
+    color: #202020;
+}
+
+
+
+
+
+#login-voltar-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+
+#login-cadastrar-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
