@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Bairro } from 'src/app/models/bairro-model/bairro';
+import { Empresa } from 'src/app/models/empresa-model/empresa';
 import { Obra } from 'src/app/models/obra-model/obra';
 import { Situacao } from 'src/app/models/situacao-enum/situacao';
 import { Tipo } from 'src/app/models/tipo-enum/tipo';
 import { BairroService } from 'src/app/service/bairro-service/bairro.service';
+import { EmpresaService } from 'src/app/service/empresa-service/empresa.service';
 import { ObraService } from 'src/app/service/obra-service/obra.service';
 
 @Component({
@@ -17,16 +19,23 @@ export class ObraFormComponent {
   constructor(
     private http: HttpClient,
     private service: ObraService,
-    private bairroService: BairroService
-  ) {}
+    private bairroService: BairroService,
+    private empresaService: EmpresaService
+  ) { }
 
-  @Input() obra: Obra = new Obra();
-  @Input() bairro: Bairro = new Bairro
   @Output() return = new EventEmitter<Obra>();
+  @Input() obra: Obra = new Obra();
+  bairro: Bairro = new Bairro();
+  empresa: Empresa = new Empresa();
+
+  tipos = ['EDUCACAO', 'INFRAESTRUTURA', 'SAUDE'];
+  situacoes = ['EM_HOMOLOGACAO', 'EM_ANDAMENTO', 'ENTREGUE', 'PARALISADA'];
+
+  sucesso: boolean = false;
+  erro: boolean = false;
+  mensagem !: string;
 
 
-  tipos = Tipo;
-  situacoes = Situacao;
 
   maskCEP(event: any) {
     const inputValue = event.target.value;
@@ -38,6 +47,7 @@ export class ObraFormComponent {
       this.getCEPInfo(truncatedValue);
     }
   }
+
   getCEPInfo(cep: string) {
     const url = `https://viacep.com.br/ws/${cep}/json/`;
     this.http.get(url).subscribe((data: any) => {
@@ -45,70 +55,89 @@ export class ObraFormComponent {
       this.obra.rua = data.logradouro;
     });
   }
+
   save() {
-    if (this.obra.id != null) {
-      this.update();
-    } else {
-      this.create();
-    }
-  }
-
-
-  create() {
     this.bairroService.findByNome(this.bairro.nome).subscribe(
       response => {
         this.obra.bairro = response;
         console.log(this.obra);
-        this.post();
+        if (this.obra.id == null) {
+          this.post();
+        } else {
+          this.put();
+        }
       }, Error => {
         this.bairroService.create(this.bairro).subscribe(
           response => {
             this.obra.bairro = response;
             console.log(this.obra);
-            this.post();
+            if (this.obra.id == null) {
+              this.post();
+            } else {
+              this.put();
+            }
+          }, error => {
+            this.mensagem = "\Error: " + error.error + "  Status: " + error.status;
+            this.erro = true;
+            setTimeout(() => {
+              this.erro = false;
+            }, 1000);
           }
         )
       }
     )
   }
-  update() {
-    this.bairroService.findByNome(this.bairro.nome).subscribe(
-      response => {
-        this.obra.bairro = response;
-        console.log(this.obra);
-        this.put();
-      }, Error => {
-        this.bairroService.create(this.bairro).subscribe(
-          response => {
-            this.obra.bairro = response;
-            console.log(this.obra);
-            this.put();
-          }
-        )
-      }
-    )
-  }
-
 
   post() {
     this.service.create(this.obra).subscribe(
       response => {
-        console.log('Obra criada com sucesso', response);
+        this.sucesso = true;
+        this.mensagem = "Sucesso... \Status: 200";
+        setTimeout(() => {
+          this.sucesso = false;
+        }, 1000);
       }, error => {
         console.log(this.obra);
+        this.mensagem = "\Error: " + error.error + "  Status: " + error.status;
+        this.erro = true;
+        setTimeout(() => {
+          this.erro = false;
+        }, 1000);
       }
     );
   }
 
   put() {
+    this.fabric();
     this.service.update(this.obra.id, this.obra).subscribe(
       response => {
-        console.log('Obra atualizada com sucesso', response);
-      },error => {
-        console.error('Falha ao atualizar a obra.', error);
+        this.sucesso = true;
+        this.mensagem = "Sucesso... \Status: 200";
+        setTimeout(() => {
+          this.sucesso = false;
+        }, 1000);
+      }, error => {
+        console.log(this.obra);
+        this.mensagem = "\Error: " + error.error + "  Status: " + error.status;
+        this.erro = true;
+        setTimeout(() => {
+          this.erro = false;
+        }, 1000);
       }
     );
   }
-  
 
+  fabric() {
+    this.empresaService.findByCNPJ(this.empresa.cnpj).subscribe(
+      response => {
+        this.obra.empresaContratada = response;
+      }, error => {
+        this.empresaService.create(this.empresa).subscribe(
+          response => {
+            this.obra.empresaContratada = response;
+          }
+        );
+      });
+
+  }
 }

@@ -14,16 +14,20 @@ export class EmpresaService {
   findById(id: number): Observable<Empresa> {
     return this.http.get<Empresa>(`${this.baseUrl}?id=${id}`);
   }
+  findByCNPJ(cnpj: string): Observable<Empresa> {
+    return this.http.get<Empresa>(`${this.baseUrl}findBy${cnpj}`);
+  }
+
   findAll(): Observable<Empresa[]> {
     return this.http.get<Empresa[]>(`${this.baseUrl}/lista`);
   }
-  create(obra: Empresa): Observable<string> {
-    return this.http.post<string>(this.baseUrl, obra);
+  create(obra: Empresa): Observable<Empresa> {
+    return this.http.post<Empresa>(this.baseUrl, obra);
   }
   update(id: number, obra: Empresa): Observable<string> {
-    return this.http.put<string>(`${this.baseUrl}?id=${id}`, obra);
+    return this.http.put<string>(`${this.baseUrl}/${id}`, obra);
   }
   delete(id: number): Observable<string> {
-    return this.http.delete<string>(`${this.baseUrl}?id=${id}`);
+    return this.http.delete<string>(`${this.baseUrl}/${id}`);
   }
 }
