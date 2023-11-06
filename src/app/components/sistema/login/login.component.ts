@@ -16,4 +16,10 @@ export class LoginComponent {
     this.roteador.navigate(["recuperar-senha"])
   }
 
+  login(){
+
+    this.roteador.navigate(["list/obra"])
+  }
+
+ 
 }
