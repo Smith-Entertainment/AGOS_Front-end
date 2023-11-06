@@ -1,26 +1,30 @@
-<section>
-    <button type="button" class="btn btn-danger col-3">Adicionar</button>
+<section class="container my-3">
+    <div class="row justify-content-end align-items-center">
+        <button type="button" class="btn col-2 rounded-5 bg-agos-green" [routerLink]="['/obra/form']">Adicionar</button>
+    </div>
 </section>
 
-<section>
-    <div class="card mb-3" *ngFor="let obra of obras" [routerLink]="['/obra/profile', obra.id]">
+<section class="container my-3">
+    <div class="card mb-3 obra-card" *ngFor="let obra of obras" [routerLink]="['/obra/profile', obra.id]">
         <div class="row g-0">
-            <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="...">
+            <div class="col-3">
+                <img src="../../assets/noimage.jpg" class="img-fluid rounded-start" alt="Obra sem imagem">
             </div>
-            <div class="col-md-8">
+            <div class="col-9">
                 <div class="card-body">
                     <h5 class="card-title">
-                        {{ obra.titulo }} 
-                        <span class="badge bg-success">{{ obra.tipoObra }}</span> 
-                        <span class="badge bg-warning">{{ obra.situacao }}</span>
+                        {{ obra.titulo }}
+                        <span class="badge bg-success me-1">{{ obra.tipoObra }}</span>
+                        <span class="badge bg-warning me-1">{{ obra.situacao }}</span>
                     </h5>
-                    <p class="card-text">{{ obra.rua }}, {{ obra.numeroEndereco }} - {{ obra.bairro }}, Foz do Iguaçu - PR, {{ obra.cep }}</p>
+                    <p class="card-text">{{ obra.rua }}, {{ obra.numeroEndereco }} - {{ obra.bairro.nome }}, Foz do Iguaçu - PR, {{ obra.cep }}</p>
                     <div class="row">
-                        <p class="card-text">{{ obra.licitacao }}</p><p class="card-text">{{ obra.numeroContrato }}</p>
-                        <p class="card-text">{{ obra.valorEdital }}</p><p class="card-text">{{ obra.valorContratado }}</p>
-                        <p class="card-text">{{ obra.dataInicio }}</p>
-                        <p class="card-text">{{ obra.dataCertame }}</p><p class="card-text">{{ obra.empresaContratada }}</p>
+                        <p class="card-text col-6">Licitação: {{ obra.licitacao }}</p>
+                        <p class="card-text col-6" *ngIf="obra.numeroContrato">Nº do contrato: {{ obra.numeroContrato }}</p>
+                        <p class="card-text col-6">Valor do edital: R${{ obra.valorEdital }}</p>
+                        <p class="card-text col-6" *ngIf="obra.valorContratado">Valor do contrato: R${{ obra.valorContratado }}</p>
+                        <p class="card-text col-6" *ngIf="!obra.empresaContratada">Data do certame: {{ obra.dataCertame }}</p><p class="card-text col-6" *ngIf="obra.empresaContratada">Empresa contratada: {{ obra.empresaContratada }}</p>
+                        <p class="card-text col-6">Data de início: {{ obra.dataInicio ? obra.dataInicio : "Indefinido" }}</p>
                     </div>
                 </div>
             </div>

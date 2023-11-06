@@ -14,6 +14,7 @@ export class ListComponent {
 
   constructor(){
     this.findAll();
+    console.log(this.obras);
   }
 
   findAll(){
