@@ -26,7 +26,7 @@
                 </div>
             </nav>
         </div>
-        <div class="col-3" id="div-login" *ngIf="isLoged == true">
+        <div class="col-3" id="div-login" *ngIf="isLoged == false">
             <div class="text-end">
                 <div>
                     <strong>
@@ -41,8 +41,8 @@
                 <img src="./assets/img/iconeperfillogin.png" alt="icone-perfil-usuario" width="50">
             </div>
         </div>
-        <div class="col-3" id="div-login" *ngIf="isLoged == false">
-            <button id="btn-signin" name="signIn" (click)="checkLogin()">Entrar</button><!--TROCAR POR ROUTERLINK-->
+        <div class="col-3" id="div-login" *ngIf="isLoged == true">
+            <button [routerLink]="['/login']" id="btn-signin" name="signIn" (click)="checkLogin()">Entrar</button><!--TROCAR POR ROUTERLINK-->
         </div>
     </div>
 </header>
