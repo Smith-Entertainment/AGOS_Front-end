@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/layout/header/header.component';
 import { LoginComponent } from './components/sistema/login/login.component';
 import { RecuperaSenhaComponent } from './components/sistema/recupera-senha/recupera-senha.component';
 import { ListComponent } from './components/list/list.component';
@@ -17,6 +18,7 @@ import { ObraListComponent } from './components/Obra/obra-list/obra-list.compone
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     ObraDetailsComponent,
     ObraListComponent,
     LoginComponent,
