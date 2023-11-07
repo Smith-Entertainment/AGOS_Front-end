@@ -1,0 +1,5 @@
+export enum Tipo {
+    EDUCACAO = 'EDUCACAO',
+    INFRAESTRUTURA = 'INFRAESTRUTURA',
+    SAUDE = 'SAUDE',
+}
