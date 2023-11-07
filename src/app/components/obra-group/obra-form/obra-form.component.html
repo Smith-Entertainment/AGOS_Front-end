@@ -121,9 +121,10 @@
 
             </div>
             <div class="d-flex justify-content-center gap ">
-                <button class="btn btn-outline-success" *ngIf="obra.id == null">Voltar</button>
+                <button class="btn btn-outline-success" *ngIf="obra.id == null" [routerLink]="['/list/obra']">Voltar</button>
+                <button class="btn btn-outline-success" *ngIf="obra.id != null" [routerLink]="['/obra', obra.id]">Voltar</button>
                 <button class="btn btn-success" *ngIf="obra.id == null" type="submit">Cadastar</button>
-                <button class="btn btn-success" *ngIf="obra.id != null" type="submit">Atualizar</button>
+                <button class="btn btn-success" *ngIf="obra.id != null" type="submit" >Atualizar</button>
             </div>
         </form>
     </div>
