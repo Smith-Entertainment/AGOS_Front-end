@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EnvioListComponent } from './envio-list.component';
+import { ObraFormComponent } from './obra-form.component';
 
-describe('EnvioListComponent', () => {
-  let component: EnvioListComponent;
-  let fixture: ComponentFixture<EnvioListComponent>;
+describe('ObraFormComponent', () => {
+  let component: ObraFormComponent;
+  let fixture: ComponentFixture<ObraFormComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [EnvioListComponent]
+      declarations: [ObraFormComponent]
     });
-    fixture = TestBed.createComponent(EnvioListComponent);
+    fixture = TestBed.createComponent(ObraFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

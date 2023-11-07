@@ -1,0 +1,43 @@
+.bord{
+    border: 0.5px solid rgb(199, 192, 192);
+    border-radius: 15px;
+}
+
+.w{
+    width: 1200px;
+    padding: 20px;
+}
+
+.gap{
+    gap: 10px;
+}
+
+.btn-outline-success{
+    border-color: #a5cf3a;
+    color: #a5cf3a;
+}
+
+.btn-outline-success:hover{
+    background-color: #a5cf3a;
+    color: white;
+}
+
+.btn-success{
+    border-color: #a5cf3a;
+    background-color: #a5cf3a;
+    color: #ffffff;
+}
+
+.btn-success:hover{
+    background-color: #96cc0d;
+    color: white;
+}
+
+.btn{
+    width: 120px;
+    height: 50px;
+}
+
+.has-error input {
+    border: 2px solid red;
+  }
