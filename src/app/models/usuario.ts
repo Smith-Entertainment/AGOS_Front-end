@@ -10,7 +10,7 @@ export class Usuario {
     senha !: string;
     nomePai !: string;
     nomeMae !: string;
-    dataNascimento !: string; // Você pode ajustar o tipo de data de acordo com o formato que deseja
+    dataNascimento !: string; 
     obras !: Obra[];
     //envios: Envio[];
 }
