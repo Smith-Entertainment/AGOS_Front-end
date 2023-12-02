@@ -1,10 +1,10 @@
 <section class="container my-3">
     <div class="row justify-content-end align-items-center">
-        <button type="button" class="btn col-2 rounded-5 bg-agos-green" [routerLink]="['/obra/form', 0]">Adicionar</button>
+        <button type="button" class="btn col-2 rounded-5 bg-agos-green" [routerLink]="['/' + listType + '/form', 0]">Adicionar</button>
     </div>
 </section>
 
-<section class="container my-3">
+<section class="container my-3" *ngIf="listType == 'obra'">
     <div class="card mb-3 obra-card" *ngFor="let obra of obras" [routerLink]="['/obra', obra.id]">
         <div class="row g-0">
             <div class="col-3">
@@ -25,6 +25,31 @@
                         <p class="card-text col-6" *ngIf="obra.valorContratado">Valor do contrato: R${{ obra.valorContratado }}</p>
                         <p class="card-text col-6" *ngIf="!obra.empresaContratada">Data do certame: {{ obra.dataCertame }}</p><p class="card-text col-6" *ngIf="obra.empresaContratada">Empresa contratada: {{ obra.empresaContratada }}</p>
                         <p class="card-text col-6">Data de início: {{ obra.dataInicio ? obra.dataInicio : "Indefinido" }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container my-3" *ngIf="listType == 'usuario'">
+    <div class="card mb-3 obra-card" *ngFor="let usuario of usuarios" [routerLink]="['/usuario', usuario.id]">
+        <div class="row g-0">
+            <div class="col-3">
+                <img src="./assets/img/noimage.jpg" class="img-fluid rounded-start" alt="Usuario sem imagem">
+            </div>
+            <div class="col-9">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{ usuario.nome }}
+                    </h5>
+                    <div class="row">
+                        <p class="card-text col-6">E-mail: {{ usuario.email }}</p>
+                        <p class="card-text col-6">Telefone: {{ usuario.celular ? usuario.celular : "-" }}</p>
+                        <p class="card-text col-6">Data de nascimento: {{ usuario.dataNascimento }}</p>
+                        <p class="card-text col-6">CPF: {{ usuario.cpf }}</p>
+                        <p class="card-text col-6">Título de eleitor: {{ usuario.tituloEleitor }}</p>
+                        <p class="card-text col-6">Nome da mãe: {{ usuario.nomeMae }}</p>
                     </div>
                 </div>
             </div>
