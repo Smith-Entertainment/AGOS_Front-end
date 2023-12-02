@@ -1,4 +1,4 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
@@ -9,6 +9,7 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 })
 export class RegisterComponent {
   @Input() user: Usuario = new Usuario();
+  @Output() retorno = new EventEmitter<Usuario>();
 
   service = inject(UsuarioService);
   messagem!: string;
