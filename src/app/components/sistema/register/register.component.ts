@@ -13,7 +13,6 @@ export class RegisterComponent {
 
   service = inject(UsuarioService);
   messagem!: string;
-
   success: boolean = false
   danger: boolean = false
 
