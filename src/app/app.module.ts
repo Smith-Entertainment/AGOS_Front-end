@@ -10,9 +10,10 @@ import { LoginComponent } from './components/sistema/login/login.component';
 import { RecuperaSenhaComponent } from './components/sistema/recupera-senha/recupera-senha.component';
 import { ListComponent } from './components/list/list.component';
 import { ObraPerfilComponent } from './components/Obra/obra-perfil/obra-perfil.component';
-import { ObraFormComponent } from './components/obra-group/obra-form/obra-form.component';
+import { ObraFormComponent } from './components/Obra/obra-form/obra-form.component';
 import { ObraDetailsComponent } from './components/Obra/obra-details/obra-details.component';
 import { ObraListComponent } from './components/Obra/obra-list/obra-list.component';
+import { RegisterComponent } from './components/sistema/register/register.component';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { ObraListComponent } from './components/Obra/obra-list/obra-list.compone
     ObraPerfilComponent,
     ObraFormComponent,
     ObraPerfilComponent,
-    
+    RegisterComponent,    
   ],
   imports: [
     FormsModule,

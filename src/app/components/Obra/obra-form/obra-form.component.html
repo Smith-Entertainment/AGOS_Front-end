@@ -8,11 +8,9 @@
                 <h3 *ngIf="obra.id != null">Edição de Obra</h3>
             </div>
             <br>
-
             <div *ngIf="erro" class="alert alert-primary    " role="alert">
                 {{ mensagem }}
             </div>
-
             <br>
             <h2>Informações Gerais</h2>
             <div class="d-flex justify-content-center gap">
@@ -21,14 +19,11 @@
                         [(ngModel)]="obra.titulo">
                     <label for="Titulo">Título</label>
                 </div>
-
-
                 <div class="form-floating mb-3 col-6" [ngClass]="{'has-error': !obra.licitacao}">
                     <input type="text" class="form-control" name="Licitação" placeholder="Licitação" required
                         [(ngModel)]="obra.licitacao">
                     <label for="Licitação">Licitação</label>
                 </div>
-
             </div>
             <h2>Endereco</h2>
             <div class="d-flex justify-content-center gap">
@@ -121,10 +116,12 @@
 
             </div>
             <div class="d-flex justify-content-center gap ">
-                <button class="btn btn-outline-success" *ngIf="obra.id == null" [routerLink]="['/list/obra']">Voltar</button>
-                <button class="btn btn-outline-success" *ngIf="obra.id != null" [routerLink]="['/obra', obra.id]">Voltar</button>
+                <button class="btn btn-outline-success" *ngIf="obra.id == null"
+                    [routerLink]="['/list/obra']">Voltar</button>
+                <button class="btn btn-outline-success" *ngIf="obra.id != null"
+                    [routerLink]="['/obra', obra.id]">Voltar</button>
                 <button class="btn btn-success" *ngIf="obra.id == null" type="submit">Cadastar</button>
-                <button class="btn btn-success" *ngIf="obra.id != null" type="submit" >Atualizar</button>
+                <button class="btn btn-success" *ngIf="obra.id != null" type="submit">Atualizar</button>
             </div>
         </form>
     </div>
