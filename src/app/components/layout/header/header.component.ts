@@ -16,8 +16,8 @@ export class HeaderComponent implements OnInit{
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit() {
-    const userId = 1;
-    this.getUsuarioBackend(userId);
+    /* const userId = 1;
+    this.getUsuarioBackend(userId); */
   }
 
   getUsuarioBackend(userId: number) {
