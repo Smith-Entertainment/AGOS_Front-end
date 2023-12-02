@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EnvioListComponent } from './envio-list.component';
+import { ListComponent } from './list.component';
 
-describe('EnvioListComponent', () => {
-  let component: EnvioListComponent;
-  let fixture: ComponentFixture<EnvioListComponent>;
+describe('ListComponent', () => {
+  let component: ListComponent;
+  let fixture: ComponentFixture<ListComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [EnvioListComponent]
+      declarations: [ListComponent]
     });
-    fixture = TestBed.createComponent(EnvioListComponent);
+    fixture = TestBed.createComponent(ListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

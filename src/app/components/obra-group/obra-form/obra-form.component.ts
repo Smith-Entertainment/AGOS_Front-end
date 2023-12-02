@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Bairro } from 'src/app/models/bairro-model/bairro';
 import { Empresa } from 'src/app/models/empresa-model/empresa';
 import { Obra } from 'src/app/models/obra-model/obra';
@@ -19,7 +20,8 @@ export class ObraFormComponent {
     private service: ObraService,
     private bairroService: BairroService,
     private empresaService: EmpresaService,
-  ) { }
+    private route: ActivatedRoute
+  ) { this.findById(); }
 
   @Output() retorno = new EventEmitter<Obra>();
   @Input() obra: Obra = new Obra();
@@ -32,7 +34,6 @@ export class ObraFormComponent {
   sucesso: boolean = false;
   erro: boolean = false;
   mensagem !: string;
-
 
   maskCEP(event: any) {
     const inputValue = event.target.value;
@@ -86,10 +87,10 @@ export class ObraFormComponent {
   }
 
   post() {
-    this.service.create(this.obra).subscribe(
+    this.service.save(this.obra).subscribe(
       response => {
         this.sucesso = true;
-        this.mensagem = "Sucesso..." ;
+        this.mensagem = "Sucesso...";
         setTimeout(() => {
           this.sucesso = false;
         }, 1000);
@@ -109,7 +110,7 @@ export class ObraFormComponent {
     this.service.update(this.obra.id, this.obra).subscribe(
       response => {
         this.sucesso = true;
-        this.mensagem = "Sucesso..." ;
+        this.mensagem = "Sucesso...";
         setTimeout(() => {
           this.sucesso = false;
         }, 1000);
@@ -135,6 +136,15 @@ export class ObraFormComponent {
           }
         );
       });
+  }
 
+  findById() {
+    this.route.params.subscribe(params => {
+      const obraId = params['id'];
+      this.service.findById(obraId).subscribe(
+        response => {
+          this.obra = response;
+        });
+    });
   }
 }

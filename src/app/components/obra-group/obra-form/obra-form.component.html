@@ -6,60 +6,59 @@
             <div class="d-flex justify-content-center ">
                 <h3 *ngIf="obra.id == null">Cadastro de Obra</h3>
                 <h3 *ngIf="obra.id != null">Edição de Obra</h3>
-            </div> 
+            </div>
             <br>
 
             <div *ngIf="erro" class="alert alert-primary    " role="alert">
                 {{ mensagem }}
             </div>
-    
+
             <br>
+            <h2>Informações Gerais</h2>
             <div class="d-flex justify-content-center gap">
-                <div class="form-floating mb-3 col-4">
+                <div class="form-floating mb-3 col-6" [ngClass]="{'has-error': !obra.titulo}">
                     <input type="text" class="form-control" name="Titulo" placeholder="Titulo" required
                         [(ngModel)]="obra.titulo">
                     <label for="Titulo">Título</label>
                 </div>
-                <div class="form-floating mb-3 col-4">
-                    <input type="text" class="form-control" name="Objetivo" placeholder="Objetivo" required
-                        [(ngModel)]="obra.objetivo">
-                    <label for="Objetivo">Objetivo</label>
-                </div>
 
-                <div class="form-floating mb-3 col-4">
+
+                <div class="form-floating mb-3 col-6" [ngClass]="{'has-error': !obra.licitacao}">
                     <input type="text" class="form-control" name="Licitação" placeholder="Licitação" required
                         [(ngModel)]="obra.licitacao">
                     <label for="Licitação">Licitação</label>
                 </div>
 
             </div>
-
+            <h2>Endereco</h2>
             <div class="d-flex justify-content-center gap">
-                <div class="form-floating mb-3 col-1.5">
+                <div class="form-floating mb-3 col-1.5" [ngClass]="{'has-error': !obra.cep}">
                     <input maxlength="8" type="text" class="form-control" name="CEP" placeholder="CEP" required
                         [(ngModel)]="obra.cep" (input)="maskCEP($event)">
                     <label for="CEP">CEP</label>
                 </div>
 
-                <div class="form-floating mb-3 col-5">
-                    <input type="text" class="form-control" name="Rua" placeholder="Rua" [(ngModel)]="obra.rua" required> 
+                <div class="form-floating mb-3 col-5" [ngClass]="{'has-error': !obra.rua}">
+                    <input type="text" class="form-control" name="Rua" placeholder="Rua" [(ngModel)]="obra.rua"
+                        required>
                     <label for="Rua">Rua</label>
                 </div>
 
-                <div class="form-floating mb-3 col-4">
+                <div class="form-floating mb-3 col-4" [ngClass]="{'has-error': !bairro.nome}">
                     <input type="text" class="form-control" name="Bairro" placeholder="Bairro" required
                         [(ngModel)]="bairro.nome">
                     <label for="Bairro">Bairro</label>
                 </div>
 
-                <div class="form-floating mb-3 col-1">
+                <div class="form-floating mb-3 col-1" [ngClass]="{'has-error': !obra.numeroEndereco}">
                     <input type="number" class="form-control" name="Numero" placeholder="Numero" required
                         [(ngModel)]="obra.numeroEndereco">
                     <label for="Numero">Número</label>
                 </div>
             </div>
+            <h2>Tipos </h2>
             <div class="d-flex justify-content-center gap">
-                <div class="form-floating mb-3 col-4">
+                <div class="form-floating mb-3 col-4" [ngClass]="{'has-error': !obra.tipoObra}">
                     <select placeholder="Tipo Obra" class="form-select" id="tipoObra" name="tipoObra" required
                         [(ngModel)]="obra.tipoObra">
                         <option *ngFor="let tipoObra of tipos" [ngValue]="tipoObra">{{tipoObra}}</option>
@@ -67,17 +66,15 @@
                     <label for="tipoObra">Tipo Obra</label>
                 </div>
 
-
-
-                <div class="form-floating mb-3 col-4">
-                    <select class="form-select" id="situacao" name="situacao" [(ngModel)]="obra.situacao" required> 
+                <div class="form-floating mb-3 col-4" [ngClass]="{'has-error': !obra.situacao}">
+                    <select class="form-select" id="situacao" name="situacao" [(ngModel)]="obra.situacao" required>
                         <option placeholder="Situação" *ngFor="let situacao of situacoes" [ngValue]="situacao">
                             {{situacao}}</option>
                     </select>
                     <label for="situacao">Situação</label>
                 </div>
 
-                <div class="form-floating mb-3 col-4">
+                <div class="form-floating mb-3 col-4" [ngClass]="{'has-error': !obra.valorEdital}">
                     <input type="number" class="form-control" name="ValorEdital" placeholder="ValorEdital" required
                         [(ngModel)]="obra.valorEdital">
                     <label for="ValorEdital">Valor do Edital</label>
@@ -86,6 +83,7 @@
 
 
             <div *ngIf="obra.id != null">
+                <h2>Valores </h2>
                 <div class="d-flex justify-content-center gap ">
                     <div class="form-floating mb-3 col-6">
                         <input type="number" class="form-control" name="NumeroContrato" placeholder="NumeroContrato"
@@ -99,14 +97,15 @@
                         <label for="ValorContratado">Valor Contratado</label>
                     </div>
                 </div>
+                <h2>Datas</h2>
 
                 <div class="d-flex justify-content-center gap">
+
                     <div class="form-floating mb-3 col-4">
                         <input type="date" class="form-control" name="dataCertame" placeholder="dataCertame"
                             [(ngModel)]="obra.dataCertame">
                         <label for="dataCertame">Número do Contrato</label>
                     </div>
-
                     <div class="form-floating mb-3 col-4">
                         <input type="date" class="form-control" name="dataInicio" placeholder="dataInicio"
                             [(ngModel)]="obra.dataInicio">
@@ -120,24 +119,12 @@
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-center gap ">
-                    <div class="form-floating mb-3 col-6">
-                        <input type="number" class="form-control" name="empresa" placeholder="empresa"
-                            [(ngModel)]="empresa.nome">
-                        <label for="empresa">Empresa Contratada </label>
-                    </div>
-
-                    <div class="form-floating mb-3 col-6">
-                        <input type="text" class="form-control" name="cnpj" placeholder="cnpj"
-                            [(ngModel)]="empresa.cnpj">
-                        <label for="cnpj">CNPJ</label>
-                    </div>
-                </div>
             </div>
             <div class="d-flex justify-content-center gap ">
-                <button class="btn btn-outline-success" *ngIf="obra.id == null">Voltar</button>
+                <button class="btn btn-outline-success" *ngIf="obra.id == null" [routerLink]="['/list/obra']">Voltar</button>
+                <button class="btn btn-outline-success" *ngIf="obra.id != null" [routerLink]="['/obra', obra.id]">Voltar</button>
                 <button class="btn btn-success" *ngIf="obra.id == null" type="submit">Cadastar</button>
-                <button class="btn btn-success" *ngIf="obra.id != null" type="submit">Atualizar</button>
+                <button class="btn btn-success" *ngIf="obra.id != null" type="submit" >Atualizar</button>
             </div>
         </form>
     </div>

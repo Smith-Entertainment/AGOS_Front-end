@@ -1,0 +1,48 @@
+<header class="row">
+    <div class="container" id="nav-container">
+        <div class="col-3">
+            <a href=""><img src="./assets/img/logo.png" alt="Logo Observatório" class="navbar-brand" id="logo"></a>
+        </div>
+        <div class="col-6">
+            <nav class="navbar navbar-expand-lg justify-content-center"> <!--fixed-top?-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
+                    aria-controls="navbar-links" aria-extend="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span></button> <!--botao menu mobile-->
+                <div class="collapse navbar-collapse justify-content-center" id="navbar-links">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a routerLink="/obras" routerLinkActive="active-link" class="nav-link"
+                                id="obras-menu">Obras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/usuarios" routerLinkActive="active-link" class="nav-link"
+                                id="usuario-menu">Usuários</a>
+                        </li>
+                        <li class="nav-item">
+                            <a routerLink="/relatorios" routerLinkActive="active-link" class="nav-link"
+                                id="relatorio-menu">Relatórios</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="col-3" id="div-login" *ngIf="isLoged == false">
+            <div class="text-end">
+                <div>
+                    <strong>
+                        <a routerLink="/usuario-details">Usuário: {{ usuario.nome }}</a>
+                    </strong>
+                </div>
+                <div>
+                    <a routerLink="" (click)="checkLogin()">Sair</a>
+                </div>
+            </div>
+            <div>
+                <img src="./assets/img/iconeperfillogin.png" alt="icone-perfil-usuario" width="50">
+            </div>
+        </div>
+        <div class="col-3" id="div-login" *ngIf="isLoged == true">
+            <button [routerLink]="['/login']" id="btn-signin" name="signIn" (click)="checkLogin()">Entrar</button><!--TROCAR POR ROUTERLINK-->
+        </div>
+    </div>
+</header>
