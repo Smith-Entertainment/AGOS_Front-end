@@ -1,6 +1,0 @@
-export enum Situacao {
-    EM_HOMOLOGACAO = 'EM_HOMOLOGACAO',
-    EM_ANDAMENTO = 'EM_ANDAMENTO',
-    ENTREGUE = 'ENTREGUE',
-    PARALISADA = 'PARALISADA',
-}

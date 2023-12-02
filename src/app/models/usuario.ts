@@ -1,4 +1,6 @@
+import { Data } from "@angular/router";
 import { Obra } from "./obra-model/obra";
+import { Situacao } from "./enum/situacao";
 
 export class Usuario {
     id !: number;
@@ -10,7 +12,7 @@ export class Usuario {
     senha !: string;
     nomePai !: string;
     nomeMae !: string;
-    dataNascimento !: string; // Você pode ajustar o tipo de data de acordo com o formato que deseja
+    dataNascimento !: Data; 
     obras !: Obra[];
-    //envios: Envio[];
+    
 }

@@ -3,8 +3,7 @@ import { Bairro } from "../bairro-model/bairro";
 import { Usuario } from "../usuario";
 import { Empresa } from "../empresa-model/empresa";
 import { Envio } from "../envio";
-import { Situacao } from "../situacao-enum/situacao";
-import { Tipo } from "../tipo-enum/tipo";
+
 
 export class Obra {
     id!: number;
