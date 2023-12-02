@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { LoginComponent } from './components/sistema/login/login.component';
 import { RecuperaSenhaComponent } from './components/sistema/recupera-senha/recupera-senha.component';
@@ -14,6 +14,7 @@ import { ObraFormComponent } from './components/Obra/obra-form/obra-form.compone
 import { ObraDetailsComponent } from './components/Obra/obra-details/obra-details.component';
 import { ObraListComponent } from './components/Obra/obra-list/obra-list.component';
 import { RegisterComponent } from './components/sistema/register/register.component';
+import { NgxMaskDirective, provideEnvironmentNgxMask, provideNgxMask } from 'ngx-mask';
 
 
 @NgModule({
@@ -36,9 +37,12 @@ import { RegisterComponent } from './components/sistema/register/register.compon
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    
+    NgxMaskDirective,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    provideNgxMask({  })
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

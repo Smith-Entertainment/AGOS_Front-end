@@ -2,6 +2,10 @@
     <div class="d-flex justify-content-center align-items-center ">
         <form (ngSubmit)="save()" class="w bord my-5 p-5">
             <h2 class="d-flex justify-content-center align-items-center ">Cadastro</h2>
+
+            <div *ngIf="success" class="alert alert-success " role="alert">{{messagem}}</div>
+            <div *ngIf="danger" class="alert alert-danger " role="alert">{{messagem}}</div>
+
             <div class="d-flex justify-content-center gap-4">
                 <div class="form-floating mb-3 col-12">
                     <input [(ngModel)]="user.nome" type="text" class="form-control" name="nome" placeholder="Titulo" required>
@@ -20,21 +24,21 @@
             </div>
             <div class="d-flex justify-content-center gap-2">
                 <div class="form-floating mb-3 col-6">
-                    <input [(ngModel)]="user.cpf"  type="text" class="form-control" name="cpf" placeholder="cpf" required>
+                    <input [(ngModel)]="user.cpf" mask="000.000.000-00"  [dropSpecialCharacters]="false" type="text" class="form-control" name="cpf" placeholder="cpf" required>
                     <label for="cpf">CPF</label>
                 </div>
                 <div class="form-floating mb-3 col-6">
-                    <input [(ngModel)]="user.tituloEleitor" type="text" class="form-control" name="tituloEleitor" placeholder="tituloEleitor" required>
+                    <input [(ngModel)]="user.tituloEleitor" mask="000000000000"  [dropSpecialCharacters]="false" type="text" class="form-control" name="tituloEleitor" placeholder="tituloEleitor" required>
                     <label for="tituloEleitor">Título de Eleitor</label>
                 </div>
             </div>
             <div class="d-flex justify-content-center gap-2">
                 <div class="form-floating mb-3 col-6">
-                    <input [(ngModel)]="user.celular" type="tel" class="form-control" name="celular" placeholder="celular" required>
+                    <input [(ngModel)]="user.celular" mask="(00)00000-0000"  [dropSpecialCharacters]="false" type="tel" class="form-control" name="celular" placeholder="celular" required>
                     <label for=" celular">Telefone</label>
                 </div>
                 <div class="form-floating mb-3 col-6">
-                    <input [(ngModel)]="user.dataNascimento"  type="date" class="form-control" name="dataNascimento" placeholder="dataNascimento" required>
+                    <input [(ngModel)]="user.dataNascimento"   type="date" class="form-control" name="dataNascimento" placeholder="dataNascimento" required>
                     <label for="dataNascimento">Data de Nascimento</label>
                 </div>
             </div>
