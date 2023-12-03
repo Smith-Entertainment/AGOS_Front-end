@@ -1,1 +1,18 @@
-<p>usuario-perfil works!</p>
+<aside class="col-3 m-3">
+    <section class="mb-3">
+        <img src="./assets/img/noimage.jpg" class="img-fluid rounded-start" alt="Obra sem imagem">
+    </section>
+    <section>
+        <h2><strong>{{ usuario.nome }}</strong></h2>
+        <p>E-mail: {{ usuario.email }}</p>
+        <p>Celular: {{ usuario.celular }}</p>
+        <p>Data de Nascimento: {{ usuario.dataNascimento }}</p>
+        <p>CPF: {{ usuario.cpf }}</p>
+        <p>Título de eleitor: {{ usuario.tituloEleitor }}</p>
+        <p>Nome da mãe: {{ usuario.nomeMae }}</p>
+        <p *ngIf="usuario.nomePai">Nome do pai: {{ usuario.nomePai }}</p>
+    </section>
+</aside>
+<main class="col-9">
+    <app-list [perfilUsuario]="usuario"></app-list>
+</main>

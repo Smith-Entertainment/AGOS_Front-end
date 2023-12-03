@@ -16,7 +16,7 @@ export class ListComponent {
   route = inject(Router);
   activeRoute = inject(ActivatedRoute);
 
-  @Input() perfilUsuario!: Usuario;
+  @Input() perfilUsuario: Usuario | undefined;
 
   listType!: string | null;
 
@@ -39,11 +39,13 @@ export class ListComponent {
 
     if(this.listType == "obra"){
       this.usuarios = new Array<Usuario>();
+      this.perfilUsuario = undefined;
       this.findAllObras();
     }
 
     if(this.listType == "usuario"){
       this.obras = new Array<Obra>();
+      this.perfilUsuario = undefined;
       this.findAllUsuarios();
     }
 
