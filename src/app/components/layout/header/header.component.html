@@ -7,30 +7,30 @@
             <nav class="navbar navbar-expand-lg justify-content-center"> <!--fixed-top?-->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
                     aria-controls="navbar-links" aria-extend="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span></button> <!--botao menu mobile-->
+                    <span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbar-links">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a routerLink="/obras" routerLinkActive="active-link" class="nav-link"
+                            <a [routerLink]="['/list/obra']" routerLinkActive="active-link" class="nav-link"
                                 id="obras-menu">Obras</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/usuarios" routerLinkActive="active-link" class="nav-link"
+                            <a [routerLink]="['/list/usuario']" routerLinkActive="active-link" class="nav-link"
                                 id="usuario-menu">Usuários</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/relatorios" routerLinkActive="active-link" class="nav-link"
+                            <a [routerLink]="['/list/relatorio']" routerLinkActive="active-link" class="nav-link"
                                 id="relatorio-menu">Relatórios</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
-        <div class="col-3" id="div-login" *ngIf="isLoged == false">
+        <div class="col-3" id="div-login" *ngIf="usuario.id != null"> <!--VERIFICAR SE USUARIO É ADMIN-->
             <div class="text-end">
                 <div>
                     <strong>
-                        <a routerLink="/usuario-details">Usuário: {{ usuario.nome }}</a>
+                        <a routerLink="/usuario-details">Olá, {{ usuario.nome }}</a>
                     </strong>
                 </div>
                 <div>
@@ -42,8 +42,8 @@
             </div>
         </div>
         <div class="col-3" id="div-login" *ngIf="isLoged == true">
-            <button [routerLink]="['/login']" id="btn-signin" name="signIn" (click)="checkLogin()">Login</button><!--TROCAR POR ROUTERLINK-->
-            <button [routerLink]="['/login']" routerLinkActive="router-link-active" id="btn-subscribe" name="subscribe">Cadastre-se</button>
+            <button [routerLink]="['/login']" id="btn-signin" name="signIn" (click)="checkLogin()">Login</button>
+            <button [routerLink]="['']" routerLinkActive="router-link-active" id="btn-subscribe" name="subscribe">Cadastre-se</button>
         </div>
     </div>
 </header>

@@ -5,14 +5,18 @@ import { ObraPerfilComponent } from './components/Obra/obra-perfil/obra-perfil.c
 import { LoginComponent } from './components/sistema/login/login.component';
 import { RecuperaSenhaComponent } from './components/sistema/recupera-senha/recupera-senha.component';
 import { ObraFormComponent } from './components/obra-group/obra-form/obra-form.component';
+import { RecuperaSenhaDetailsComponent } from './components/sistema/recupera-senha-details/recupera-senha-details.component';
 
 const routes: Routes = [
-  {path: "", redirectTo: "list/obra", pathMatch: "full"},
-  {path: "list/:type", component: ListComponent},
-  {path:"login", component: LoginComponent},
-  {path:"recuperar-senha", component: RecuperaSenhaComponent},
-  {path:"obra/:id", component: ObraPerfilComponent},
-  {path: 'obra/form/:id', component: ObraFormComponent}
+  { path: "", redirectTo: "list/obra", pathMatch: "full" },
+  { path: "list/:type", component: ListComponent },
+  { path: "login", component: LoginComponent },
+  {
+    path: "recuperar-senha", component: RecuperaSenhaComponent, children: [
+      { path: 'recuperar', component: RecuperaSenhaDetailsComponent }]
+  },
+  { path: "obra/:id", component: ObraPerfilComponent },
+  { path: 'obra/form/:id', component: ObraFormComponent }
 
 ]
 

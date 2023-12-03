@@ -13,6 +13,7 @@ import { ObraPerfilComponent } from './components/Obra/obra-perfil/obra-perfil.c
 import { ObraFormComponent } from './components/obra-group/obra-form/obra-form.component';
 import { ObraDetailsComponent } from './components/Obra/obra-details/obra-details.component';
 import { ObraListComponent } from './components/Obra/obra-list/obra-list.component';
+import { RecuperaSenhaDetailsComponent } from './components/sistema/recupera-senha-details/recupera-senha-details.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ObraListComponent } from './components/Obra/obra-list/obra-list.compone
     ObraPerfilComponent,
     ObraFormComponent,
     ObraPerfilComponent,
+    RecuperaSenhaDetailsComponent,
     
   ],
   imports: [
