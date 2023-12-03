@@ -1,4 +1,3 @@
-import { Data } from "@angular/router";
 import { Bairro } from "../bairro-model/bairro";
 import { Usuario } from "../usuario-model/usuario";
 import { Empresa } from "../empresa-model/empresa";
@@ -10,19 +9,17 @@ export class Obra {
     objetivo!:string;
     cep!: string;
     licitacao!: string;
-    dataCertame!: Data;
+    dataCertame!: Date;
     valorEdital!: number;
     bairro!: Bairro;
     rua!: string;
     numeroEndereco!: number;
     valorContratado!: number;
-    dataInicio!: Data;
-    dataTermino!: Data;
+    dataInicio!: Date;
+    dataTermino!: Date;
     numeroContrato!: string;
     empresaContratada!: Empresa;
-    //situacao!: Situacao;
     situacao!: string;
-    //tipoObra!: Tipo;
     tipoObra!: string;
     foto!: Envio;
     usuarios!: Usuario[];   

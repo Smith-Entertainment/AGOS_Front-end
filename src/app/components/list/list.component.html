@@ -4,7 +4,7 @@
     </div>
 </section>
 
-<section class="container my-3" *ngIf="listType == 'obra'">
+<section class="container my-3" *ngIf="listType == 'obra' || listType == null">
     <div class="card mb-3 obra-card" *ngFor="let obra of obras" [routerLink]="['/obra', obra.id]">
         <div class="row g-0">
             <div class="col-3">
