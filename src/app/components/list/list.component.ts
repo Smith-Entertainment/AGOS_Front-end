@@ -2,8 +2,8 @@ import { Component, Input, inject } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Obra } from 'src/app/models/obra-model/obra';
 import { Usuario } from 'src/app/models/usuario-model/usuario';
-import { ObraService } from 'src/app/service/obra.service';
-import { UsuarioService } from 'src/app/service/usuario.service';
+import { ObraService } from 'src/app/service/obra-service/obra.service';
+import { UsuarioService } from 'src/app/service/usuario-service/usuario.service';
 
 @Component({
   selector: 'app-list',
