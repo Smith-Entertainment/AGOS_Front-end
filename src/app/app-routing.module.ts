@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListComponent } from './components/list/list.component';
 import { ObraPerfilComponent } from './components/Obra/obra-perfil/obra-perfil.component';
