@@ -1,6 +1,5 @@
 import { Data } from "@angular/router";
 import { Obra } from "../obra-model/obra";
-import { Situacao } from "../enum/situacao";
 
 export class Usuario {
     id !: number;
@@ -10,9 +9,10 @@ export class Usuario {
     celular !: string;
     tituloEleitor !: string;
     senha !: string;
+    token!: string;
+    role!: string;
     nomePai !: string;
     nomeMae !: string;
     dataNascimento !: Data; 
     obras !: Obra[];
-    
 }
