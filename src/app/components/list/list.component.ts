@@ -32,6 +32,12 @@ export class ListComponent {
     this.atualizarRota();
   }
 
+  ngOnChanges() {
+    if (this.perfilUsuario) {
+      this.atualizarRota();
+    }
+  }
+
   atualizarRota(){
     this.activeRoute.paramMap.subscribe(params => {
       this.listType = params.get("type");

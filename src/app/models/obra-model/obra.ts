@@ -10,14 +10,14 @@ export class Obra {
     objetivo!:string;
     cep!: string;
     licitacao!: string;
-    dataCertame!: Data;
+    dataCertame!: Date;
     valorEdital!: number;
     bairro!: Bairro;
     rua!: string;
     numeroEndereco!: number;
     valorContratado!: number;
-    dataInicio!: Data;
-    dataTermino!: Data;
+    dataInicio!: Date;
+    dataTermino!: Date;
     numeroContrato!: string;
     empresaContratada!: Empresa;
     //situacao!: Situacao;
