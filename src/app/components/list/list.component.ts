@@ -1,7 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Obra } from 'src/app/models/obra';
-import { Usuario } from 'src/app/models/usuario';
+import { Obra } from 'src/app/models/obra-model/obra';
+import { Usuario } from 'src/app/models/usuario-model/usuario';
 import { ObraService } from 'src/app/service/obra.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
@@ -15,6 +15,8 @@ export class ListComponent {
   usuarioService = inject(UsuarioService);
   route = inject(Router);
   activeRoute = inject(ActivatedRoute);
+
+  @Input() perfilUsuario!: Usuario;
 
   listType!: string | null;
 
@@ -43,6 +45,11 @@ export class ListComponent {
     if(this.listType == "usuario"){
       this.obras = new Array<Obra>();
       this.findAllUsuarios();
+    }
+
+    if(this.listType == null && this.perfilUsuario != undefined){
+      this.usuarios = new Array<Usuario>();
+      this.obras = this.perfilUsuario.obras;
     }
   }
 
