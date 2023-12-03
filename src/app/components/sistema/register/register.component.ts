@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario-model/usuario';
 import { UsuarioService } from 'src/app/service/usuario-service/usuario.service';
 
@@ -8,10 +9,19 @@ import { UsuarioService } from 'src/app/service/usuario-service/usuario.service'
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+
+  constructor(){
+    this. findById();
+  }
+
+
   @Input() user: Usuario = new Usuario();
   @Output() retorno = new EventEmitter<Usuario>();
 
   service = inject(UsuarioService);
+  route = inject(ActivatedRoute);
+  roteador = inject(Router)
+
   messagem!: string;
   success: boolean = false
   danger: boolean = false
@@ -61,9 +71,8 @@ export class RegisterComponent {
         if (error.status < 400) {
           console.log("Sucesso");
           this.success = true;
-          this.messagem = "Usuário cadastrado com sucesso!";
+          this.messagem = "Usuário Atualizado com sucesso!";
           setTimeout(() => {
-            this.clearFormFields(this.user);
             this.success = false;
           }, 2500);
         }
@@ -77,6 +86,16 @@ export class RegisterComponent {
         }
       }
     );
+  }
+
+  findById() {
+    this.route.params.subscribe(params => {
+      const usuarioId = params['id'];
+      this.service.findById(usuarioId).subscribe(
+        response => {
+          this.user = response;
+        });
+    });
   }
 
 }
