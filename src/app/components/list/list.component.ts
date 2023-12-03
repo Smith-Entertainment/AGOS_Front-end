@@ -16,7 +16,7 @@ export class ListComponent {
   route = inject(Router);
   activeRoute = inject(ActivatedRoute);
 
-  @Input() perfilUsuario: Usuario | undefined;
+  @Input() perfilUsuario?: Usuario;
 
   listType!: string | null;
 

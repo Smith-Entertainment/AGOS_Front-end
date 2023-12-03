@@ -16,6 +16,7 @@
             <p>Título de eleitor: {{ usuario.tituloEleitor }}</p>
             <p>Nome da mãe: {{ usuario.nomeMae }}</p>
             <p *ngIf="usuario.nomePai">Nome do pai: {{ usuario.nomePai }}</p>
+            <button type="button" class="btn bg-agos-green col-4 rounded-0" (click)="openModal(rolesModal)" *ngIf="usuarioLogadoRole == 'ADMIN'">Editar cargos</button>
         </section>
     </aside>
 
@@ -24,3 +25,21 @@
         <app-list [perfilUsuario]="usuario"></app-list>
     </section>
 </main>
+<ng-template #rolesModal let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Editar permissões</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body row justify-content-center">
+		<div class="form-floating mb-3 col-4">
+            <select placeholder="Cargo" class="form-select" id="roles" name="roles" [(ngModel)]="usuario.role">
+                <option value="ADMIN" [selected]="usuario.role == 'ADMIN'">Admin</option>
+                <option value="VOLUNTARIO" [selected]="usuario.role == 'VOLUNTARIO'">Voluntário</option>
+            </select>
+            <label for="roles" class="ms-2">Cargo</label>
+        </div>
+	</div>
+	<div class="modal-footer">
+        <button type="submit" class="btn bg-agos-green rounded-0" (click)="salvar()">Salvar</button>
+	</div>
+</ng-template>

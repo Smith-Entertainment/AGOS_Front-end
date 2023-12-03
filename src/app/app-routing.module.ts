@@ -6,7 +6,7 @@ import { LoginComponent } from './components/sistema/login/login.component';
 import { RecuperaSenhaComponent } from './components/sistema/recupera-senha/recupera-senha.component';
 import { ObraFormComponent } from './components/Obra/obra-form/obra-form.component';
 import { RegisterComponent } from './components/sistema/register/register.component';
-import { UsuarioPerfilComponent } from './components/usuario-perfil/usuario-perfil.component';
+import { UsuarioPerfilComponent } from './components/usuario/usuario-perfil/usuario-perfil.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "list/obra", pathMatch: "full"},
