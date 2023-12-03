@@ -16,7 +16,7 @@ export class ListComponent {
   route = inject(Router);
   activeRoute = inject(ActivatedRoute);
 
-  @Input() perfilUsuario!: Usuario;
+  @Input() perfilUsuario?: Usuario;
 
   listType!: string | null;
 
@@ -32,6 +32,12 @@ export class ListComponent {
     this.atualizarRota();
   }
 
+  ngOnChanges() {
+    if (this.perfilUsuario) {
+      this.atualizarRota();
+    }
+  }
+
   atualizarRota(){
     this.activeRoute.paramMap.subscribe(params => {
       this.listType = params.get("type");
@@ -39,11 +45,13 @@ export class ListComponent {
 
     if(this.listType == "obra"){
       this.usuarios = new Array<Usuario>();
+      this.perfilUsuario = undefined;
       this.findAllObras();
     }
 
     if(this.listType == "usuario"){
       this.obras = new Array<Obra>();
+      this.perfilUsuario = undefined;
       this.findAllUsuarios();
     }
 
