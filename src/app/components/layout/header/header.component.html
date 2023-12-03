@@ -11,15 +11,15 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbar-links">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a routerLink="/list/obra" routerLinkActive="active-link" class="nav-link"
+                            <a [routerLink]="['/list/obra']" routerLinkActive="active-link" class="nav-link"
                                 id="obras-menu">Obras</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/list/usuario" routerLinkActive="active-link" class="nav-link"
+                            <a [routerLink]="['/list/usuario']" routerLinkActive="active-link" class="nav-link"
                                 id="usuario-menu">Usuários</a>
                         </li>
                         <li class="nav-item">
-                            <a routerLink="/relatorios" routerLinkActive="active-link" class="nav-link"
+                            <a [routerLink]="['/relatorios']" routerLinkActive="active-link" class="nav-link"
                                 id="relatorio-menu">Relatórios</a>
                         </li>
                     </ul>
@@ -30,7 +30,7 @@
             <div class="text-end">
                 <div>
                     <strong>
-                        <a routerLink="/usuario-details">Usuário: {{ usuario.nome }}</a>
+                        <a [routerLink]="['/usuario' + usuario.id]">Usuário: {{ usuario.nome }}</a>
                     </strong>
                 </div>
                 <div>

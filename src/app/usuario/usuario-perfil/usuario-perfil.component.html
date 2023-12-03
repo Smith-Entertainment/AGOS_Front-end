@@ -1,4 +1,4 @@
-<aside class="col-3 m-3">
+<div class="col-3 m-3">
     <section class="mb-3">
         <img src="./assets/img/noimage.jpg" class="img-fluid rounded-start" alt="Obra sem imagem">
     </section>
@@ -12,7 +12,8 @@
         <p>Nome da mãe: {{ usuario.nomeMae }}</p>
         <p *ngIf="usuario.nomePai">Nome do pai: {{ usuario.nomePai }}</p>
     </section>
-</aside>
-<main class="col-9">
+</div>
+<div class="col-9">
+    <h1>Obras acompanhadas</h1>
     <app-list [perfilUsuario]="usuario"></app-list>
-</main>
+</div>
