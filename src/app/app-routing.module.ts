@@ -16,7 +16,8 @@ const routes: Routes = [
   {path:"recuperar-senha", component: RecuperaSenhaComponent},
   {path:"obra/:id", component: ObraPerfilComponent},
   {path: 'obra/form/:id', component: ObraFormComponent},
-  {path: 'usuario/:id', component: UsuarioPerfilComponent}
+  {path: 'usuario/:id', component: UsuarioPerfilComponent},
+  {path: 'usuario/form/:id', component: RegisterComponent}
 ]
 
 @NgModule({

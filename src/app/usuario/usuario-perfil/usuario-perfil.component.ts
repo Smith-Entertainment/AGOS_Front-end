@@ -8,19 +8,16 @@ import { UsuarioService } from 'src/app/service/usuario-service/usuario.service'
   templateUrl: './usuario-perfil.component.html',
   styleUrls: ['./usuario-perfil.component.scss']
 })
-export class UsuarioPerfilComponent implements OnInit{
+export class UsuarioPerfilComponent {
   usuario: Usuario = new Usuario();
   usuarioService = inject(UsuarioService);
   activeRoute = inject(ActivatedRoute);
 
   constructor() {
-    
-  }
-  ngOnInit(): void {
     this.activeRoute.paramMap.subscribe(params => {
       this.usuario.id = Number(params.get("id"));
     });
-    
+
     this.findById(this.usuario.id);
   }
 
