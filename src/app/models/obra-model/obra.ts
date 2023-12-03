@@ -1,9 +1,8 @@
 import { Data } from "@angular/router";
 import { Bairro } from "../bairro-model/bairro";
-import { Usuario } from "../usuario";
+import { Usuario } from "../usuario-model/usuario";
 import { Empresa } from "../empresa-model/empresa";
-import { Envio } from "../envio";
-
+import { Envio } from "../envio-model/envio";
 
 export class Obra {
     id!: number;
@@ -25,7 +24,6 @@ export class Obra {
     situacao!: string;
     //tipoObra!: Tipo;
     tipoObra!: string;
-
     foto!: Envio;
     usuarios!: Usuario[];   
 

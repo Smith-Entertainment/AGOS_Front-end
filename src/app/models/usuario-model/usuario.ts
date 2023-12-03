@@ -1,6 +1,6 @@
 import { Data } from "@angular/router";
-import { Obra } from "./obra-model/obra";
-import { Situacao } from "./enum/situacao";
+import { Obra } from "../obra-model/obra";
+import { Situacao } from "../enum/situacao";
 
 export class Usuario {
     id !: number;
