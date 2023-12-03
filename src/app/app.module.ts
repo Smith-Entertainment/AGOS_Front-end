@@ -13,6 +13,7 @@ import { ObraPerfilComponent } from './components/Obra/obra-perfil/obra-perfil.c
 import { ObraFormComponent } from './components/Obra/obra-form/obra-form.component';
 import { RegisterComponent } from './components/sistema/register/register.component';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { UsuarioPerfilComponent } from './usuario/usuario-perfil/usuario-perfil.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     ObraFormComponent,
     ObraPerfilComponent,
     RegisterComponent,
+    UsuarioPerfilComponent,
   ],
   imports: [
     FormsModule,

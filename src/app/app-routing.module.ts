@@ -6,6 +6,7 @@ import { LoginComponent } from './components/sistema/login/login.component';
 import { RecuperaSenhaComponent } from './components/sistema/recupera-senha/recupera-senha.component';
 import { ObraFormComponent } from './components/Obra/obra-form/obra-form.component';
 import { RegisterComponent } from './components/sistema/register/register.component';
+import { UsuarioPerfilComponent } from './usuario/usuario-perfil/usuario-perfil.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "list/obra", pathMatch: "full"},
@@ -14,8 +15,8 @@ const routes: Routes = [
   {path:"register", component: RegisterComponent},
   {path:"recuperar-senha", component: RecuperaSenhaComponent},
   {path:"obra/:id", component: ObraPerfilComponent},
-  {path: 'obra/form/:id', component: ObraFormComponent}
-
+  {path: 'obra/form/:id', component: ObraFormComponent},
+  {path: 'usuario/:id', component: UsuarioPerfilComponent}
 ]
 
 @NgModule({
