@@ -15,6 +15,8 @@ import { ObraFormComponent } from './components/Obra/obra-form/obra-form.compone
 import { RegisterComponent } from './components/sistema/register/register.component';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 import { UsuarioPerfilComponent } from './components/usuario/usuario-perfil/usuario-perfil.component';
+import { LoginService } from './service/login-service/login.service';
+import { httpInterceptorProviders } from './interceptors/http-interceptor.service';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { UsuarioPerfilComponent } from './components/usuario/usuario-perfil/usua
     ReactiveFormsModule
   ],
   providers: [
+    LoginService,
+    httpInterceptorProviders,
     provideNgxMask({  })
   ],
   bootstrap: [AppComponent]
