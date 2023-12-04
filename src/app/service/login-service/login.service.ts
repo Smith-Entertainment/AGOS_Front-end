@@ -11,7 +11,7 @@ import { JwtPayload, jwtDecode } from "jwt-decode";
 export class LoginService {
 
 
-api : string = 'http://localhost:8080/api/login';
+api : string = 'http://204.236.251.232:8080/api/login';
 
 http = inject(HttpClient);
 

@@ -8,7 +8,7 @@ import { Bairro } from 'src/app/models/bairro-model/bairro';
 })
 export class BairroService {
 
-  private baseUrl = 'http://localhost:8080/api/bairro';
+  private baseUrl = 'http://204.236.251.232:8080/api/bairro';
 
   constructor(private http: HttpClient) {}
 
