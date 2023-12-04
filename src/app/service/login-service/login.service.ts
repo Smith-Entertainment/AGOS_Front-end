@@ -11,7 +11,7 @@ import { JwtPayload, jwtDecode } from "jwt-decode";
 export class LoginService {
 
 
-api : string = 'http://localhost:8080/api/login';
+api: string = 'http://localhost:8080/api/login';
 
 http = inject(HttpClient);
 
@@ -20,6 +20,8 @@ http = inject(HttpClient);
 
 
   logar(login:Login): Observable<Usuario>{
+    console.log(login.email);
+
 
     return this.http.post<Usuario>(this.api,login)
   }

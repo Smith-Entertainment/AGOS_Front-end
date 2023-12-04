@@ -3,22 +3,20 @@
     <form class="form-signin" (ngSubmit)="logar()">
         <h1 class="h3 mb-3 font-weight-normal">Bem-vindo</h1>
         <h3 class="h3 mb-3 font-weight-normal">Observatório Social de Foz do Iguaçu</h3>
-        <div id="email-container">
-            <img src="assets/login.png" alt="login icon">
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="login.email">
-                <label for="floatingInput">Email address</label>
-            </div>
-        </div>
 
 
-        <div id="senha-container">
-            <img src="assets/senha.png" alt="senha icon">
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" [(ngModel)]="login.senha">
-                <label  for="floatingPassword">Password</label>
-            </div>
-        </div>
+
+        <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="typeEmailX">Email</label>
+                  <input type="text" id="typeEmailX" name="typeEmailX" class="form-control form-control-lg" 
+                  [(ngModel)]="login.email"/>
+                </div>
+  
+                <div class="form-outline form-white mb-4">
+                  <label class="form-label" for="typePasswordX">Password</label>
+                  <input type="password" id="typePasswordX" name="exampleInputPassword1"class="form-control form-control-lg" 
+                  [(ngModel)]="login.senha">
+                </div>
 
         <div id="esqueci-senha">
             <input type="checkbox">

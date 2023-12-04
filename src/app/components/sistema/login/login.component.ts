@@ -33,6 +33,7 @@ export class LoginComponent {
 
 
     this.loginService.logar(this.login).subscribe({
+   
       next: usuario => { 
         console.log(usuario);
         this.loginService.addToken(usuario.token);
@@ -41,6 +42,8 @@ export class LoginComponent {
       error: erro => {
         alert('erro, Observe o erro no console!');
         console.error(erro);
+        console.log(this.login.email + 'email')
+        console.log(this.login.senha + 'senha')
         console.log('nao foi')
       }
     });
