@@ -1,5 +1,7 @@
 import { Component, Inject, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { Login } from 'src/app/models/login-model/login';
+import { LoginService } from 'src/app/service/login-service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -8,8 +10,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
+  login: Login = new Login();
 
-  roteador = inject(Router)
+  loginService  = inject(LoginService);
+  roteador = inject(Router);
+
+  constructor(){
+    this.loginService.removeToken();
+  }
 
   recuperarSenha(){
 
@@ -19,10 +27,27 @@ export class LoginComponent {
 
     this.roteador.navigate(["register"])
   }
-  login(){
 
-    this.roteador.navigate(["list/obra"])
+
+  logar() {
+
+
+    this.loginService.logar(this.login).subscribe({
+      next: usuario => { 
+        console.log(usuario);
+        this.loginService.addToken(usuario.token);
+        this.roteador.navigate(['list/obra']);
+      },
+      error: erro => {
+        alert('erro, Observe o erro no console!');
+        console.error(erro);
+        console.log('nao foi')
+      }
+    });
+
   }
+
+
 
  
 }
