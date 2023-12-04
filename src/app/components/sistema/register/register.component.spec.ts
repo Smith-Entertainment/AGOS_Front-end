@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ObraListComponent } from './obra-list.component';
+import { RegisterComponent } from './register.component';
 
-describe('ObraListComponent', () => {
-  let component: ObraListComponent;
-  let fixture: ComponentFixture<ObraListComponent>;
+describe('RegisterComponent', () => {
+  let component: RegisterComponent;
+  let fixture: ComponentFixture<RegisterComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ObraListComponent]
+      declarations: [RegisterComponent]
     });
-    fixture = TestBed.createComponent(ObraListComponent);
+    fixture = TestBed.createComponent(RegisterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -15,7 +15,10 @@ export class LoginComponent {
 
     this.roteador.navigate(["recuperar-senha"])
   }
+  register(){
 
+    this.roteador.navigate(["register"])
+  }
   login(){
 
     this.roteador.navigate(["list/obra"])

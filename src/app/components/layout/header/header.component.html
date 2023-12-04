@@ -3,7 +3,7 @@
         <div class="col-3">
             <a href=""><img src="./assets/img/logo.png" alt="Logo Observatório" class="navbar-brand" id="logo"></a>
         </div>
-        <div class="col-6" > <!--*ngIf="usuario === 'ADMIN'"-->
+        <div class="col-6" *ngIf="usuario.role == 'ADMIN'">
             <nav class="navbar navbar-expand-lg justify-content-center"> <!--fixed-top?-->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
                     aria-controls="navbar-links" aria-extend="false" aria-label="Toggle navigation">
@@ -19,7 +19,7 @@
                                 id="usuario-menu">Usuários</a>
                         </li>
                         <li class="nav-item">
-                            <a [routerLink]="['/list/relatorio']" routerLinkActive="active-link" class="nav-link"
+                            <a [routerLink]="['/relatorios']" routerLinkActive="active-link" class="nav-link"
                                 id="relatorio-menu">Relatórios</a>
                         </li>
                     </ul>
@@ -30,7 +30,7 @@
             <div class="text-end">
                 <div>
                     <strong>
-                        <a routerLink="/usuario-details">Olá, {{ usuario.nome }}</a>
+                        <a  [routerLink]="['/usuario + usuario.id']">Usuário: {{usuario.nome}}</a>
                     </strong>
                 </div>
                 <div>
@@ -43,7 +43,7 @@
         </div>
         <div class="col-3" id="div-login" *ngIf="isLoged == true">
             <button [routerLink]="['/login']" id="btn-signin" name="signIn" (click)="checkLogin()">Login</button>
-            <button [routerLink]="['']" routerLinkActive="router-link-active" id="btn-subscribe" name="subscribe">Cadastre-se</button>
+            <button [routerLink]="['/register']" routerLinkActive="router-link-active" id="btn-subscribe" name="subscribe">Cadastre-se</button>
         </div>
     </div>
 </header>

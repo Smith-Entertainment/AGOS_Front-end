@@ -1,4 +1,5 @@
-import { Obra } from "./obra-model/obra";
+import { Data } from "@angular/router";
+import { Obra } from "../obra-model/obra";
 
 export class Usuario {
     id !: number;
@@ -8,9 +9,10 @@ export class Usuario {
     celular !: string;
     tituloEleitor !: string;
     senha !: string;
+    token!: string;
+    role!: string;
     nomePai !: string;
     nomeMae !: string;
-    dataNascimento !: string; // Você pode ajustar o tipo de data de acordo com o formato que deseja
+    dataNascimento !: Data; 
     obras !: Obra[];
-    //envios: Envio[];
 }

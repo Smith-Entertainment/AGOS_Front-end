@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/models/usuario';
-import { UsuarioService } from 'src/app/service/usuario.service';
+import { Usuario } from 'src/app/models/usuario-model/usuario';
+import { UsuarioService } from 'src/app/service/usuario-service/usuario.service';
 
 @Component({
   selector: 'app-header',
@@ -16,8 +16,8 @@ export class HeaderComponent implements OnInit{
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit() {
-    const userId = 1;
-    this.getUsuarioBackend(userId);
+    /* const userId = 1;
+    this.getUsuarioBackend(userId); */
   }
 
   getUsuarioBackend(userId: number) {
