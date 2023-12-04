@@ -10,7 +10,6 @@ import { JwtPayload, jwtDecode } from "jwt-decode";
 })
 export class LoginService {
 
-
 api : string = 'http://204.236.251.232:8080/api/login';
 
 http = inject(HttpClient);
@@ -44,6 +43,23 @@ http = inject(HttpClient);
 
   }
 
+  getId(){
+
+    return this.decodeToken().id;
+
+  }
+
+  getNome(){
+
+    return this.decodeToken().nome;
+
+  }
+
+  getRole(){
+
+    return this.decodeToken().role;
+
+  }
 
   removeToken(){
 
@@ -56,7 +72,7 @@ http = inject(HttpClient);
 
     let token = this.getToken() as string;
 
-    const decoded = jwtDecode<JwtPayload>(token) as Usuario;
+    const decoded = jwtDecode(token) as Usuario;
 
     return decoded;
 

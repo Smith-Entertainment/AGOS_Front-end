@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario-model/usuario';
+import { LoginService } from 'src/app/service/login-service/login.service';
 import { UsuarioService } from 'src/app/service/usuario-service/usuario.service';
 
 @Component({
@@ -7,17 +8,23 @@ import { UsuarioService } from 'src/app/service/usuario-service/usuario.service'
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent{
+  loginService = inject(LoginService);
+  usuarioService = inject(UsuarioService);
+  usuario!: Usuario;
 
-  usuario: Usuario = new Usuario();
+  constructor() {
+    this.usuario = new Usuario();
 
-  isLoged: boolean = true;
+    if(localStorage.getItem("token")){
+      this.instaciarUsuario();
+    }
+  }
 
-  constructor(private usuarioService: UsuarioService) { }
-
-  ngOnInit() {
-    /* const userId = 1;
-    this.getUsuarioBackend(userId); */
+  instaciarUsuario(){
+    this.usuario.id = this.loginService.getId();
+    this.usuario.nome = this.loginService.getNome();
+    this.usuario.role = this.loginService.getRole();
   }
 
   getUsuarioBackend(userId: number) {
@@ -30,12 +37,4 @@ export class HeaderComponent implements OnInit{
       }
     );
   }
-
-  checkLogin(){
-    this.isLoged = !this.isLoged; //Toggle
-
-    if(this.isLoged == true){}
-    this.usuario = this.usuario;
-  }
-
 }
