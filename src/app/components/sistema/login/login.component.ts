@@ -30,7 +30,8 @@ export class LoginComponent {
 
 
   logar() {
-
+    console.log(this.login);
+    
 
     this.loginService.logar(this.login).subscribe({
       next: usuario => { 
