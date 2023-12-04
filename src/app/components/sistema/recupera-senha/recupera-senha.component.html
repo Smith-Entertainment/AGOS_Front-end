@@ -1,1 +1,9 @@
-<p>recupera-senha works!</p>
+<h2>Recuperar Senha</h2>
+<p>Informe seu e-mail ou número de celular para enviarmos o link de recuperação de senha.</p>
+<input type="text" name="inputRecuperacao" placeholder="E-mail ou Número de celular">
+<div class="col-3">
+    <button [routerLink]="['/recupera-senha-details']" id="btn-recuperar" name="recuperarSenha"
+        (click)="recuperarSenha()">Enviar</button>
+    <button [routerLink]="['']" routerLinkActive="router-link-active" id="btn-voltar" name="voltarTelaAnterior"
+        (click)="voltarTelaAnterior()">Voltar</button>
+</div>

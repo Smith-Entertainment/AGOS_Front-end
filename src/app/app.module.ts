@@ -10,6 +10,7 @@ import { LoginComponent } from './components/sistema/login/login.component';
 import { RecuperaSenhaComponent } from './components/sistema/recupera-senha/recupera-senha.component';
 import { ListComponent } from './components/list/list.component';
 import { ObraPerfilComponent } from './components/Obra/obra-perfil/obra-perfil.component';
+import { RecuperaSenhaDetailsComponent } from './components/sistema/recupera-senha-details/recupera-senha-details.component';
 import { ObraFormComponent } from './components/Obra/obra-form/obra-form.component';
 import { RegisterComponent } from './components/sistema/register/register.component';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
@@ -26,6 +27,7 @@ import { UsuarioPerfilComponent } from './components/usuario/usuario-perfil/usua
     ObraPerfilComponent,
     ObraFormComponent,
     ObraPerfilComponent,
+    RecuperaSenhaDetailsComponent,
     RegisterComponent,
     UsuarioPerfilComponent,
   ],

@@ -44,7 +44,6 @@ header {
     justify-content: flex-end;
     gap: 1.5rem;
     flex-wrap: wrap-reverse;
-    /* background-color: black; */
 }
 
 #div-login a {
@@ -57,15 +56,24 @@ header {
     color: #A5CF3A;
 }
 #btn-signin{
-    height: 1.5rem;
-    width: 100px;
-    color: #202020;
-    height: auto;
-    border-radius: 5px;
-}
-#btn-signin:hover{
+    height: 3rem;
+    width: 120px;
     background-color: #A5CF3A;
     border-color: #A5CF3A;
+    border-style: solid;
+}
+#btn-signin:hover{
+    border-color: #202020;
+}
+#btn-subscribe{
+    height: 3rem;
+    width: 120px;
+    border-color: #A5CF3A;
+    border-style: solid;
+}
+#btn-subscribe:hover{
+    border-color: #202020;
+
 }
 .navbar-toggler, .navbar-toggler-icon{
     background-color: #A5CF3A;
