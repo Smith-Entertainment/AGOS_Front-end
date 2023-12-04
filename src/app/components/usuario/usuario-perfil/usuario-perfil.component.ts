@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Usuario } from 'src/app/models/usuario-model/usuario';
+import { LoginService } from 'src/app/service/login-service/login.service';
 import { UsuarioService } from 'src/app/service/usuario-service/usuario.service';
 
 @Component({
@@ -12,17 +13,18 @@ import { UsuarioService } from 'src/app/service/usuario-service/usuario.service'
 export class UsuarioPerfilComponent {
   modalService = inject(NgbModal);
   usuarioService = inject(UsuarioService);
+  loginService = inject(LoginService);
   activeRoute = inject(ActivatedRoute);
 
   usuario: Usuario = new Usuario();
-  usuarioLogadoRole!: string | null;
+  usuarioAdmin!: boolean;
 
   constructor() {
     this.activeRoute.paramMap.subscribe(params => {
       this.usuario.id = Number(params.get("id"));
     });
 
-    this.usuarioLogadoRole = localStorage.getItem("role");
+    this.usuarioAdmin = this.loginService.hasPermission("ADMIN")
 
     this.findById(this.usuario.id);
   }
