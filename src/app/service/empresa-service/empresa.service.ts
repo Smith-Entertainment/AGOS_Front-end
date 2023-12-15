@@ -7,7 +7,7 @@ import { Empresa } from 'src/app/models/empresa-model/empresa';
 })
 export class EmpresaService {
 
-  private baseUrl = 'http://204.236.251.232:8080/api/empresa';
+  private baseUrl = 'http://52.54.206.246:8080/api/empresa';
 
   constructor(private http: HttpClient) {}
 
