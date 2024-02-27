@@ -1,35 +1,66 @@
-.w{
-    width: 1000px;
+.w {
+    width: 1500px;
     padding: 20px;
 }
 
-.bord{
-    border: 0.5px solid rgb(199, 192, 192);
+.bord {
+    border: 0.5px solid rgb(230, 223, 223);
     border-radius: 15px;
 }
 
-.btn-outline-success{
+.btn-outline-success {
     border-color: #a5cf3a;
     color: black;
 }
 
-.btn-outline-success:hover{
+.btn-outline-success:hover {
     background-color: #a5cf3a;
     color: white;
 }
 
-.btn-success{
+.btn-success {
     border-color: #a5cf3a;
     background-color: #a5cf3a;
     color: black;
 }
 
-.btn-success:hover{
-    background-color: #96cc0d;
+.btn-success:hover {
+    background-color: #a5cf3a;
     color: white;
 }
 
-.btn{
-    width: 120px;
-    height: 50px;
+.btn {
+    width: 180px;
+    height: 80px;
+    font-family: "Caladea";
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.font-title {
+    font-family: "Caladea";
+    size: 52px;
+    font-weight: 500;
+}
+
+.first-input {
+    border: 2px solid #a5cf3a;
+
+}
+
+input {
+    border: 2px solid #8b898970;
+
+
+}
+
+.main {
+    font-family: "Caladea";
+}
+
+span {
+    margin-left: 5px;
+    cursor: pointer;
+    color: #0063B1;
+    border-bottom: solid 1px #0063B1;
 }
