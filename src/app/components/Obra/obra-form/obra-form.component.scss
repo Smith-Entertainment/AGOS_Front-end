@@ -1,11 +1,7 @@
-.bord{
-    border: 0.5px solid rgb(199, 192, 192);
-    border-radius: 15px;
-}
 
 .w{
-    width: 1200px;
-    padding: 20px;
+    width: 1500px;
+
 }
 
 .gap{
@@ -41,3 +37,67 @@
 .has-error input {
     border: 2px solid red;
   }
+
+  input {
+    border: 2px solid #8b898970;
+    font-style: italic;
+}
+.input-dif{
+    width: 230px;
+}
+.input-tree{
+    margin-left: 10px;
+}
+.main {
+    font-family: "Caladea";
+}
+
+select{
+    border: 2px solid #8b898970;
+    font-style: italic;
+}
+
+.btn-outline-success {
+    border-color: #a5cf3a;
+    color: black;
+}
+
+.btn-outline-success:hover {
+    background-color: #a5cf3a;
+    color: white;
+}
+
+.btn-success {
+    border-color: #a5cf3a;
+    background-color: #a5cf3a;
+    color: black;
+}
+
+.btn-success:hover {
+    background-color: #a5cf3a;
+    color: white;
+}
+
+.btn {
+    width: 140px;
+    height: 70px;
+    font-family: "Caladea";
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.font-title {
+    font-family: "Caladea";
+    size: 52px;
+    font-weight: 500;
+}
+
+.form-floating .form-control:focus {
+    border-color: #a5cf3a !important; 
+    box-shadow: 0 0 0 0.25rem rgba(165, 207, 58, 0.25); 
+}
+
+.form-floating .form-select:focus {
+    border-color: #a5cf3a !important; 
+    box-shadow: 0 0 0 0.25rem rgba(165, 207, 58, 0.25); 
+}
