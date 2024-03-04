@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Usuario } from 'src/app/models/usuario-model/usuario';
@@ -31,7 +31,11 @@ export class UsuarioPerfilComponent {
 
   findById(id: number){
     this.usuarioService.findById(id).subscribe({
-      next: usuario => { this.usuario = usuario },
+      next: usuario => { 
+        this.usuario = usuario
+        this.usuario.role = this.loginService.getRole();
+        console.log(this.usuario.role)
+      },
       error: erro => console.log(erro)
     });
   }
