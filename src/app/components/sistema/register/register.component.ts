@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Usuario } from 'src/app/models/usuario-model/usuario';
 import { UsuarioService } from 'src/app/service/usuario-service/usuario.service';
 
@@ -21,6 +22,7 @@ export class RegisterComponent {
   service = inject(UsuarioService);
   route = inject(ActivatedRoute);
   roteador = inject(Router)
+  modalService = inject(NgbModal);
 
   messagem!: string;
   success: boolean = false
@@ -60,6 +62,9 @@ export class RegisterComponent {
         }
       }
     );
+  }
+  open(modal: any) {
+    this.modalService.open(modal, { size:  'lg'});
   }
 
   put() {

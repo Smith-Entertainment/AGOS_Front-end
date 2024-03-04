@@ -1,35 +1,72 @@
-.w{
-    width: 1000px;
+.w {
+    width: 1100px;
     padding: 20px;
+
 }
 
-.bord{
-    border: 0.5px solid rgb(199, 192, 192);
+.bord {
+    border: 0.5px solid rgb(255, 255, 255);
     border-radius: 15px;
 }
 
-.btn-outline-success{
+.btn-outline-success {
     border-color: #a5cf3a;
     color: black;
 }
 
-.btn-outline-success:hover{
+.btn-outline-success:hover {
     background-color: #a5cf3a;
     color: white;
 }
 
-.btn-success{
+.btn-success {
     border-color: #a5cf3a;
     background-color: #a5cf3a;
     color: black;
 }
 
-.btn-success:hover{
-    background-color: #96cc0d;
+.btn-success:hover {
+    background-color: #a5cf3a;
     color: white;
 }
 
-.btn{
-    width: 120px;
-    height: 50px;
+.btn {
+    width: 140px;
+    height: 65px;
+    font-family: "Caladea";
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.font-title {
+    font-family: "Caladea";
+    size: 52px;
+    font-weight: 500;
+}
+
+
+input {
+    border: 2px solid #8b898970;
+    font-style: italic;
+}
+
+.main {
+    font-family: "Caladea";
+}
+
+span {
+    margin-left: 5px;
+    cursor: pointer;
+    color: #0063B1;
+    border-bottom: solid 1px #0063B1;
+}
+
+.form-floating .form-control:focus {
+    border-color: #a5cf3a !important;
+    box-shadow: 0 0 0 0.25rem rgba(165, 207, 58, 0.25);
+}
+
+.form-floating .form-select:focus {
+    border-color: #a5cf3a !important;
+    box-shadow: 0 0 0 0.25rem rgba(165, 207, 58, 0.25);
 }

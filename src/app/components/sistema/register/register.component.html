@@ -1,40 +1,47 @@
-<div class="d-flex justify-content-center flex-column my-5">
+<div  class="d-flex justify-content-center flex-column main ">
     <div class="d-flex justify-content-center align-items-center ">
-        <form (ngSubmit)="save()" class="w bord my-5 p-5">
-            <h2 *ngIf="!user.id" class="d-flex justify-content-center align-items-center ">Cadastro</h2>
-            <h2 *ngIf="user.id" class="d-flex justify-content-center align-items-center ">Edição</h2>
+        <form (ngSubmit)="save()" class="w bord ">
+            <h2 *ngIf="!user.id" class="d-flex justify-content-center align-items-center font-title mb-5">Cadastro de
+                Voluntário</h2>
+            <h2 *ngIf="user.id" class="d-flex justify-content-center align-items-center font-title mb-5">Editar Dados de
+                Voluntário</h2>
 
             <div *ngIf="success" class="alert alert-success " role="alert">{{messagem}}</div>
             <div *ngIf="danger" class="alert alert-danger " role="alert">{{messagem}}</div>
 
-            <div class="d-flex justify-content-center gap-4">
+            <div class="d-flex justify-content-center gap-4 ">
                 <div class="form-floating mb-3 col-12">
-                    <input [(ngModel)]="user.nome" type="text" class="form-control" name="nome" placeholder="Titulo"
-                        required>
+                    <input autocomplete="off" [(ngModel)]="user.nome" type="text" class="form-control"
+                        name="nome" placeholder="Titulo" required>
                     <label for="nome">Nome Completo</label>
                 </div>
             </div>
             <div class="d-flex justify-content-center gap-2">
                 <div class="form-floating mb-3 col-6">
-                    <input [(ngModel)]="user.email" type="email" class="form-control" name="email" placeholder="E-mail"
-                        required>
+                    <input autocomplete="off" [(ngModel)]="user.email" type="email" class="form-control" name="email"
+                        placeholder="E-mail" required>
                     <label for=" email">E-mail</label>
                 </div>
-                <div class="form-floating mb-3 col-6">
-                    <input [(ngModel)]="user.senha" type="password" class="form-control" name="password"
-                        placeholder="password" required>
+                <div *ngIf="!user.id" class="form-floating mb-3 col-6">
+                    <input autocomplete="off" [(ngModel)]="user.senha" type="password" class="form-control"
+                        name="password" placeholder="password" required>
                     <label for="password">Senha</label>
                 </div>
+                <div *ngIf="user.id"  class="form-floating mb-3 col-6">
+                    <input type="file" class="form-control" id="image" name="image" accept="image/*"  required>
+                    <label for="image">Imagem</label>
+                </div>
+                
             </div>
             <div class="d-flex justify-content-center gap-2">
                 <div class="form-floating mb-3 col-6">
-                    <input [(ngModel)]="user.cpf" [disabled]="user.id != null" mask="000.000.000-00"
+                    <input autocomplete="off" [(ngModel)]="user.cpf" [disabled]="user.id != null" mask="000.000.000-00"
                         [dropSpecialCharacters]="false" type="text" class="form-control" name="cpf" placeholder="cpf"
                         required>
                     <label for="cpf">CPF</label>
                 </div>
                 <div class="form-floating mb-3 col-6">
-                    <input [(ngModel)]="user.tituloEleitor" mask="000000000000" data-toggle="tooltip"
+                    <input autocomplete="off" [(ngModel)]="user.tituloEleitor" mask="000000000000" data-toggle="tooltip"
                         [disabled]="user.id != null" data-placement="top" [dropSpecialCharacters]="false" type="text"
                         class="form-control" placement="top"
                         ngbTooltip="Campo utilizado para verificação de afiliação pólitica." name="tituloEleitor"
@@ -44,34 +51,65 @@
             </div>
             <div class="d-flex justify-content-center gap-2">
                 <div class="form-floating mb-3 col-6">
-                    <input [(ngModel)]="user.celular" mask="(00)00000-0000" [dropSpecialCharacters]="false" type="tel"
-                        class="form-control" name="celular" placeholder="celular" required>
-                    <label for=" celular">Telefone</label>
+                    <input autocomplete="off" [(ngModel)]="user.celular" mask="(00)00000-0000"
+                        [dropSpecialCharacters]="false" type="tel" class="form-control" name="celular"
+                        placeholder="celular" required>
+                    <label for=" celular">Celular</label>
                 </div>
                 <div class="form-floating mb-3 col-6">
-                    <input [(ngModel)]="user.dataNascimento" type="date" class="form-control" name="dataNascimento"
-                        placeholder="dataNascimento" required>
+                    <input autocomplete="off" [(ngModel)]="user.dataNascimento" type="date" class="form-control"
+                        name="dataNascimento" placeholder="dataNascimento" required>
                     <label for="dataNascimento">Data de Nascimento</label>
                 </div>
             </div>
             <div class="d-flex justify-content-center gap-2">
                 <div class="form-floating mb-3 col-6">
-                    <input [(ngModel)]="user.nomePai" type="text" class="form-control" name="nomePai"
+                    <input autocomplete="off" [(ngModel)]="user.nomePai" type="text" class="form-control" name="nomePai"
                         placeholder="nomePai" required>
-                    <label for="nomePai">Pai</label>
+                    <label for="nomePai">Nome do Pai</label>
                 </div>
                 <div class="form-floating mb-3 col-6">
-                    <input [(ngModel)]="user.nomeMae" type="text" class="form-control" name="nomeMae"
+                    <input autocomplete="off" [(ngModel)]="user.nomeMae" type="text" class="form-control" name="nomeMae"
                         placeholder="nomeMae" required>
-                    <label for="nomeMae">Mãe</label>
+                    <label for="nomeMae">Nome da Mãe</label>
                 </div>
+            </div>
+            <div *ngIf="!user.id" class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Concordo com os
+                </label>
+                <span (click)="open(info)">termos de uso</span>
             </div>
             <div class="d-flex justify-content-center gap-5 my-4">
                 <button *ngIf="user.id != null" class="btn btn-outline-success"
                     [routerLink]="['/usuario/', user.id]">Voltar</button>
                 <button *ngIf="user.id == null" class="btn btn-outline-success"
                     [routerLink]="['/login']">Voltar</button>
-                <button class="btn btn-success" type="submit">Registar</button>
+                <button class="btn btn-success" type="submit">Cadastrar</button>
             </div>
         </form>
     </div>
+
+    <ng-template #info let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title">Termos de Uso</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <div class="d-flex justify-content-center flex-column align-items-center">
+                <p>Estes são os termos de uso genéricos.</p>
+                <p>Por favor, leia atentamente antes de usar este serviço.</p>
+                <p>Aqui estão algumas regras e diretrizes que governam o uso deste serviço:</p>
+                <ul>
+                    <li>Respeite os direitos autorais e propriedade intelectual dos outros usuários.</li>
+                    <li>Não publique conteúdo ilegal, difamatório ou ofensivo.</li>
+                    <li>Mantenha suas credenciais de login seguras e não compartilhe com terceiros.</li>
+                    <li>Este serviço pode coletar dados de uso para melhorar a experiência do usuário.</li>
+                </ul>
+                <p>Ao usar este serviço, você concorda em cumprir estes termos de uso.</p>
+            </div>
+        </div>
+    </ng-template>
+    
+
