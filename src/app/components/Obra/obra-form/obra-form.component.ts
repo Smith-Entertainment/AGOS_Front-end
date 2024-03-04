@@ -21,7 +21,11 @@ export class ObraFormComponent {
     private bairroService: BairroService,
     private empresaService: EmpresaService,
     private route: ActivatedRoute
-  ) { this.findById(); }
+  ) {
+    this.findById();
+
+
+  }
 
   @Output() retorno = new EventEmitter<Obra>();
   @Input() obra: Obra = new Obra();
@@ -127,16 +131,36 @@ export class ObraFormComponent {
 
   fabric() {
     this.empresaService.findByCNPJ(this.empresa.cnpj).subscribe(
-      response => {
+      (response: Empresa) => {
         this.obra.empresaContratada = response;
-      }, error => {
-        this.empresaService.create(this.empresa).subscribe(
-          response => {
-            this.obra.empresaContratada = response;
-          }
-        );
-      });
+        this.saveOrUpdateObra();
+      },
+      (error) => {
+        this.createEmpresa();
+      }
+    );
   }
+  
+  createEmpresa() {
+    this.empresaService.create(this.empresa).subscribe(
+      (response: Empresa) => {
+        this.obra.empresaContratada = response;
+        this.saveOrUpdateObra();
+      },
+      (error) => {
+        console.error("Erro ao criar empresa:", error);
+      }
+    );
+  }
+  
+  saveOrUpdateObra() {
+    if (this.obra.id === null) {
+      this.post();
+    } else {
+      this.put();
+    }
+  }
+  
 
   findById() {
     this.route.params.subscribe(params => {
@@ -144,7 +168,12 @@ export class ObraFormComponent {
       this.service.findById(obraId).subscribe(
         response => {
           this.obra = response;
+          this.bairro.nome = this.obra.bairro.nome;
+          this.empresa.cnpj = this.obra.empresaContratada.cnpj;
+          this.empresa.nome = this.obra.empresaContratada.nome;
         });
     });
   }
+
+ 
 }
