@@ -13,9 +13,7 @@
       <section class="desc">
         
         <div>
-          <div class="d-flex justify-content-end ">
-            <button  type="button" class="btn " [routerLink]="['/obra/form', obra.id]"><img class="config" src="./assets/img/config.png" alt=""></button>
-          </div>
+      
           <div class="titulo">
             <h2>{{ obra.titulo }}</h2>
             <span class="badge text-bg-secondary">{{obra.situacao}}</span>
@@ -105,7 +103,7 @@
         </div>
         
         <div class="part">
-          
+          <button  type="button" class="btnConfig " [routerLink]="['/obra/form', obra.id]"><img class="config" src="./assets/img/config.png" alt=""></button>
           <button id="btp">Participar</button>
         </div>
       </section>
@@ -116,10 +114,7 @@
     <div class="lista">
       <a routerLink="/cronograma">Cronograma</a>
       <a routerLink="/graficos">Gráficos</a>
-      <a routerLink="/fotos">Fotos</a>
-      <a routerLink="/projetos">Projetos</a>
-      <a routerLink="/relatorios">Relatórios</a>
-      <a routerLink="/documentos">Documentos</a>
+      <a routerLink="/voluntarios">Voluntarios</a>
     </div>
   </nav>
   <hr>
