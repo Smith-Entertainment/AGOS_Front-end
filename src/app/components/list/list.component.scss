@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Caladea&display=swap');
+body{
+    font-family: 'Caladea';
+}
 .bg-agos-green{
     background-color: #a5cf3a;
 }
-
+.btnFilter{
+    border-style: none;
+    background-color: #a5cf3a00;
+  }
+    
+  .filter{
+    height: 2vw;
+  }
 .obra-card :hover{
     cursor: pointer;
     border: 2px solid #a5cf3a;
@@ -9,4 +20,8 @@
 
 .obra-card > * :hover{
     border: none;
+}
+.form-control{
+    width: 15vw;
+    margin-right: 650px;
 }

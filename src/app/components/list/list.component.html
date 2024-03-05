@@ -1,5 +1,7 @@
 <section class="container my-3" *ngIf="listType == 'obra'">
-    <div class="row justify-content-end align-items-center">
+    <div class="d-flex justify-content-end align-items-center">
+            <input class="form-control" type="search" placeholder="🔍Pesquisa..." aria-label="Search">
+        <button  type="button" class="btnFilter " ><img class="filter" src="./assets/img/Filtros.png" alt=""></button>
         <button type="button" class="btn col-2 rounded-5 bg-agos-green" [routerLink]="['/obra/form', 0]">Adicionar</button>
     </div>
 </section>
@@ -20,7 +22,6 @@
                     <p class="card-text">{{ obra.rua }}, {{ obra.numeroEndereco }} - {{ obra.bairro.nome }}, Foz do Iguaçu - PR, {{ obra.cep }}</p>
                     <div class="row">
                         <p class="card-text col-6">Licitação: {{ obra.licitacao }}</p>
-                        <p class="card-text col-6" *ngIf="obra.numeroContrato">Nº do contrato: {{ obra.numeroContrato }}</p>
                         <p class="card-text col-6">Valor do edital: R${{ obra.valorEdital }}</p>
                         <p class="card-text col-6" *ngIf="obra.valorContratado">Valor do contrato: R${{ obra.valorContratado }}</p>
                         <p class="card-text col-6" *ngIf="!obra.empresaContratada">Data do certame: {{ obra.dataCertame }}</p><p class="card-text col-6" *ngIf="obra.empresaContratada">Empresa contratada: {{ obra.empresaContratada }}</p>
