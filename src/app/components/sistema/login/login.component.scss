@@ -27,16 +27,29 @@ h3{
 
 #floatingInput{
 
-    background-color: #E2DDDC;
+    background-color: #ffffff;
     width: 100%;
+    
 }
+
+#floatingInput:focus{
+
+    border-color: #A5CF3A;
+    
+}
+
 
 #floatingPassword{
 
-    background-color: #E2DDDC;
+    background-color: #ffffff;
     width: 100%;
 }
 
+#floatingPassword:focus{
+
+    border-color: #A5CF3A;
+    
+}
 #email-container{
 
     display: flex;
@@ -64,7 +77,16 @@ img{
 
     margin-left: 45%;
     text-decoration: underline;
-    color: #000000;
+    color: rgba(0, 99, 177, 1);
+}
+#cadastre{
+    text-decoration: underline;
+    color: rgba(0, 99, 177, 1);
+}
+#cadastre:hover{
+
+    color: #A5CF3A;
+
 }
 
 #testeee:hover{
@@ -76,11 +98,19 @@ img{
 #loginButton{
 
     width:  30%;
+    height: 55px;
     margin: 5px;
-    background-color: #A5CF3A;
-    border: none;
+    background-color: #ffffff;
+    border-color: #A5CF3A;
+    border-style: solid;
     border-radius: 5px;
     color: #202020;
+    font-size: x-large;
+    
+}
+
+#loginButton:hover{
+    background-color: #A5CF3A;
 }
 
 #voltarButton{

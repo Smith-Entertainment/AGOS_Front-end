@@ -7,7 +7,7 @@
             <img src="assets/login.png" alt="login icon">
             <div class="form-floating mb-3">
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" [(ngModel)]="login.email" name="email">
-                <label for="floatingInput">Email address</label>
+                <label for="floatingInput">E-mail</label>
             </div>
         </div>
 
@@ -20,18 +20,21 @@
             </div>
         </div>
 
-        <div id="esqueci-senha">
-            <input type="checkbox">
-            <label>Remember me</label>
+        <div class="d-flex justify-content-end align-items-center">
             <label id="testeee" (click)="recuperarSenha()">Esqueci minha senha</label>
         </div>
 
-        <div id="login-voltar-btn">
-            <button id="loginButton"  class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-            <button id="cadastrarButton" (click)="register()" class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
+        <div class="d-flex justify-content-lg-around " style="padding-top: 30px;">
+            <button  id="loginButton"[routerLink]="['/list/obra']">Voltar</button>
+            <button id="loginButton"   type="submit">Login</button>
+
         </div>
 
+       <div class="d-flex justify-content-center align-items-center" style="padding-top: 25px;">
+
+        <p>Não possui cadastro? <label id="cadastre" (click)="register()">Cadastre-se aqui</label></p>
        
+       </div>
 
     </form>
 </div>    
