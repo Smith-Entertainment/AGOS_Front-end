@@ -1,19 +1,67 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 #btn-recuperar{
     height: 3rem;
     width: 120px;
-    background-color: #A5CF3A;
+    background-color: #ffffff;
     border-color: #A5CF3A;
     border-style: solid;
 }
 #btn-recuperar:hover{
     border-color: #202020;
+    background-color: #A5CF3A;
+
 }
 #btn-voltar{
     height: 3rem;
     width: 120px;
     border-color: #A5CF3A;
     border-style: solid;
+    background-color: white;
 }
 #btn-voltar:hover{
     border-color: #202020;
+    background-color: #A5CF3A;
+
+}
+
+.tudo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Caladea';
+}
+.content{
+    font-size: larger;
+    height: fit-content;
+}
+.content h2{
+    margin-bottom: 3vh;
+}
+
+.content p{
+    margin-bottom: 1vh;
+    width: 320px;
+    font-style: italic;
+    font-weight: 600;
+}
+.content input{
+    margin-bottom: 1vh;
+    width: 300px;
+    height: 50px;
+}
+.content button 
+{
+    margin-right: 20px;
+    margin-left: 15px;
+    font-style: italic;
+}
+.inputEmail {
+    border: 1px solid #D8D8D8; /* Define a cor da borda */
+    padding: 5px;
 }
